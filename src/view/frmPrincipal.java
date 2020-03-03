@@ -56,7 +56,7 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(51, 153, 103));
 
-        jLabel3.setFont(new java.awt.Font("Baskerville Old Face", 1, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("VETERINARIA BOXER");
 
@@ -82,7 +82,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(239, 238, 244));
 
         jLabel1.setBackground(new java.awt.Color(166, 166, 166));
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(128, 128, 131));
         jLabel1.setText("MENÚ");
 
@@ -112,6 +112,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         btnHome.setColorTextHover(new java.awt.Color(128, 128, 131));
         btnHome.setColorTextNormal(new java.awt.Color(128, 128, 131));
         btnHome.setColorTextPressed(new java.awt.Color(128, 128, 131));
+        btnHome.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         btnHome.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnHome.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnHome.setIconTextGap(25);
@@ -137,6 +138,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         btnPet.setColorTextHover(new java.awt.Color(128, 128, 131));
         btnPet.setColorTextNormal(new java.awt.Color(128, 128, 131));
         btnPet.setColorTextPressed(new java.awt.Color(128, 128, 131));
+        btnPet.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         btnPet.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnPet.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnPet.setIconTextGap(25);
@@ -162,6 +164,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         btnOwner.setColorTextHover(new java.awt.Color(128, 128, 131));
         btnOwner.setColorTextNormal(new java.awt.Color(128, 128, 131));
         btnOwner.setColorTextPressed(new java.awt.Color(128, 128, 131));
+        btnOwner.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         btnOwner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnOwner.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnOwner.setIconTextGap(25);
@@ -187,6 +190,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         btnSettings.setColorTextHover(new java.awt.Color(128, 128, 131));
         btnSettings.setColorTextNormal(new java.awt.Color(128, 128, 131));
         btnSettings.setColorTextPressed(new java.awt.Color(128, 128, 131));
+        btnSettings.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         btnSettings.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnSettings.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnSettings.setIconTextGap(25);

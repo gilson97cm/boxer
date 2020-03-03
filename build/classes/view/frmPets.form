@@ -31,8 +31,8 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanel3" alignment="1" pref="1083" max="32767" attributes="0"/>
-                  <Component id="rSDesktopPane1" alignment="1" max="32767" attributes="0"/>
+                  <Component id="pnlPrincipal" alignment="1" pref="1083" max="32767" attributes="0"/>
+                  <Component id="rSDesktopPane1" alignment="1" pref="1083" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -43,7 +43,7 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+              <Component id="pnlPrincipal" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="rSDesktopPane1" min="-2" pref="58" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
@@ -108,9 +108,9 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="rSComboMetro1" min="-2" pref="40" max="-2" attributes="0"/>
-                          <Component id="rSMTextFull2" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
-                          <Component id="rSButton7" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="rSComboMetro1" min="-2" pref="45" max="-2" attributes="0"/>
+                          <Component id="rSMTextFull2" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
+                          <Component id="rSButton7" min="-2" pref="45" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -183,7 +183,7 @@
         </Container>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="jPanel3">
+    <Container class="javax.swing.JPanel" name="pnlPrincipal">
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout"/>
       <SubComponents>
@@ -288,7 +288,7 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="rSMTextFull1" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="rSMTextFull1" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
                               <Component id="rSRadioButtonMaterial1" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="rSRadioButtonMaterial2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -299,8 +299,8 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="rSMTextFull3" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="rSMTextFull5" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="rSMTextFull3" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                              <Component id="rSMTextFull5" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -309,8 +309,8 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="rSMTextFull4" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="rSMTextFull6" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="rSMTextFull4" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                              <Component id="rSMTextFull6" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -319,8 +319,8 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="rSMTextFull7" min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="rSDateChooser1" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="rSMTextFull7" min="-2" pref="45" max="-2" attributes="0"/>
+                              <Component id="rSDateChooser1" min="-2" pref="45" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="25" max="32767" attributes="0"/>
                       </Group>
@@ -640,15 +640,15 @@
                               <Component id="jLabel26" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="rSMTextFull8" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="rSMTextFull8" min="-2" pref="45" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                           <Component id="jLabel24" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                          <Component id="rSMTextFull9" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="rSMTextFull9" min="-2" pref="45" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jLabel25" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="rSMTextFull10" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="rSMTextFull10" min="-2" pref="45" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jPanel7" max="-2" attributes="0"/>
@@ -761,6 +761,9 @@
                     </Property>
                     <Property name="iconTextGap" type="int" value="8"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSButton1ActionPerformed"/>
+                  </Events>
                 </Component>
                 <Container class="javax.swing.JPanel" name="jPanel6">
                   <Properties>
@@ -819,7 +822,7 @@
         <Property name="useNullLayout" type="boolean" value="true"/>
       </Layout>
       <SubComponents>
-        <Component class="rojeru_san.RSButton" name="rSButton2">
+        <Component class="rojeru_san.RSButton" name="btnNewPet">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/res/icons/anadir (1).png"/>
@@ -830,6 +833,9 @@
             </Property>
             <Property name="iconTextGap" type="int" value="8"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNewPetActionPerformed"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="150" y="10" width="200" height="40"/>
