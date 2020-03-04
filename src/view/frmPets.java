@@ -118,7 +118,7 @@ public class frmPets extends javax.swing.JPanel {
                 .addGap(30, 30, 30)
                 .addComponent(rSComboMetro1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rSButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(rSButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -367,7 +367,7 @@ public class frmPets extends javax.swing.JPanel {
         rSMTextFull10.setPlaceholder("");
 
         rSButton1.setBackground(new java.awt.Color(0, 172, 193));
-        rSButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons/archivador.png"))); // NOI18N
+        rSButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons/carpeta.png"))); // NOI18N
         rSButton1.setText("Historia");
         rSButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         rSButton1.setIconTextGap(8);
