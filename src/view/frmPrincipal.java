@@ -8,6 +8,7 @@ package view;
 import controller.ChangePanel;
 import java.awt.Color;
 
+
 /**
  *
  * @author GILSON
@@ -46,10 +47,10 @@ public class frmPrincipal extends javax.swing.JFrame {
         pnlMenu = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        btnHome = new rsbuttom.RSButtonMetro();
-        btnPet = new rsbuttom.RSButtonMetro();
-        btnOwner = new rsbuttom.RSButtonMetro();
-        btnSettings = new rsbuttom.RSButtonMetro();
+        btnHome = new res.rsbuttom.RSButtonMetro();
+        btnPet = new res.rsbuttom.RSButtonMetro();
+        btnOwner = new res.rsbuttom.RSButtonMetro();
+        btnSettings = new res.rsbuttom.RSButtonMetro();
         pnlHome = new javax.swing.JPanel();
         pnlPet = new javax.swing.JPanel();
         pnlOwner = new javax.swing.JPanel();
@@ -656,12 +657,12 @@ public class frmPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private rojeru_san.RSButton btnClose;
-    private rsbuttom.RSButtonMetro btnHome;
+    private res.rsbuttom.RSButtonMetro btnHome;
     private rojeru_san.RSButton btnMax;
     private rojeru_san.RSButton btnMin;
-    private rsbuttom.RSButtonMetro btnOwner;
-    private rsbuttom.RSButtonMetro btnPet;
-    private rsbuttom.RSButtonMetro btnSettings;
+    private res.rsbuttom.RSButtonMetro btnOwner;
+    private res.rsbuttom.RSButtonMetro btnPet;
+    private res.rsbuttom.RSButtonMetro btnSettings;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;

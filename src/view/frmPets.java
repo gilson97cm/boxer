@@ -366,7 +366,7 @@ public class frmPets extends javax.swing.JPanel {
         rSMTextFull10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         rSMTextFull10.setPlaceholder("");
 
-        rSButton1.setBackground(new java.awt.Color(0, 172, 193));
+        rSButton1.setBackground(new java.awt.Color(128, 128, 242));
         rSButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons/carpeta.png"))); // NOI18N
         rSButton1.setText("Historia");
         rSButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
