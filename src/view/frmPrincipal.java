@@ -47,21 +47,22 @@ public class frmPrincipal extends javax.swing.JFrame {
         pnlMenu = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        btnHome = new res.rsbuttom.RSButtonMetro();
-        btnPet = new res.rsbuttom.RSButtonMetro();
-        btnOwner = new res.rsbuttom.RSButtonMetro();
-        btnSettings = new res.rsbuttom.RSButtonMetro();
         pnlHome = new javax.swing.JPanel();
         pnlPet = new javax.swing.JPanel();
         pnlOwner = new javax.swing.JPanel();
         pnlSettings = new javax.swing.JPanel();
         jcMousePanel1 = new jcMousePanel.jcMousePanel();
+        btnHome = new res.rsbuttom.RSButtonMetro();
+        btnPet = new res.rsbuttom.RSButtonMetro();
+        btnOwner = new res.rsbuttom.RSButtonMetro();
+        btnSettings = new res.rsbuttom.RSButtonMetro();
         pnlContainer = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 103), 3));
 
         pnlSys.setBackground(new java.awt.Color(51, 153, 103));
         pnlSys.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -124,7 +125,7 @@ public class frmPrincipal extends javax.swing.JFrame {
             .addGroup(pnlSysLayout.createSequentialGroup()
                 .addGap(59, 59, 59)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 833, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 827, Short.MAX_VALUE)
                 .addComponent(btnMin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnMax, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -144,6 +145,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         );
 
         pnlMenu.setBackground(new java.awt.Color(239, 238, 244));
+        pnlMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel4.setBackground(new java.awt.Color(239, 238, 244));
 
@@ -169,108 +171,7 @@ public class frmPrincipal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        btnHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/img/home-run.png"))); // NOI18N
-        btnHome.setText("INICIO");
-        btnHome.setToolTipText("");
-        btnHome.setColorHover(new java.awt.Color(204, 204, 204));
-        btnHome.setColorNormal(new java.awt.Color(204, 204, 204));
-        btnHome.setColorPressed(new java.awt.Color(204, 204, 204));
-        btnHome.setColorTextHover(new java.awt.Color(128, 128, 131));
-        btnHome.setColorTextNormal(new java.awt.Color(128, 128, 131));
-        btnHome.setColorTextPressed(new java.awt.Color(128, 128, 131));
-        btnHome.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        btnHome.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnHome.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btnHome.setIconTextGap(25);
-        btnHome.setPreferredSize(new java.awt.Dimension(180, 35));
-        btnHome.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnHomeMousePressed(evt);
-            }
-        });
-        btnHome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnHomeActionPerformed(evt);
-            }
-        });
-
-        btnPet.setBackground(new java.awt.Color(239, 238, 244));
-        btnPet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/img/pet.png"))); // NOI18N
-        btnPet.setText("MASCOTA");
-        btnPet.setToolTipText("");
-        btnPet.setColorHover(new java.awt.Color(204, 204, 204));
-        btnPet.setColorNormal(new java.awt.Color(239, 238, 244));
-        btnPet.setColorPressed(new java.awt.Color(204, 204, 204));
-        btnPet.setColorTextHover(new java.awt.Color(128, 128, 131));
-        btnPet.setColorTextNormal(new java.awt.Color(128, 128, 131));
-        btnPet.setColorTextPressed(new java.awt.Color(128, 128, 131));
-        btnPet.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        btnPet.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnPet.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btnPet.setIconTextGap(25);
-        btnPet.setPreferredSize(new java.awt.Dimension(180, 35));
-        btnPet.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnPetMousePressed(evt);
-            }
-        });
-        btnPet.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPetActionPerformed(evt);
-            }
-        });
-
-        btnOwner.setBackground(new java.awt.Color(239, 238, 244));
-        btnOwner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/img/user.png"))); // NOI18N
-        btnOwner.setText("PROPIETARIO");
-        btnOwner.setToolTipText("");
-        btnOwner.setColorHover(new java.awt.Color(204, 204, 204));
-        btnOwner.setColorNormal(new java.awt.Color(239, 238, 244));
-        btnOwner.setColorPressed(new java.awt.Color(204, 204, 204));
-        btnOwner.setColorTextHover(new java.awt.Color(128, 128, 131));
-        btnOwner.setColorTextNormal(new java.awt.Color(128, 128, 131));
-        btnOwner.setColorTextPressed(new java.awt.Color(128, 128, 131));
-        btnOwner.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        btnOwner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnOwner.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btnOwner.setIconTextGap(25);
-        btnOwner.setPreferredSize(new java.awt.Dimension(180, 35));
-        btnOwner.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnOwnerMousePressed(evt);
-            }
-        });
-        btnOwner.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOwnerActionPerformed(evt);
-            }
-        });
-
-        btnSettings.setBackground(new java.awt.Color(239, 238, 244));
-        btnSettings.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/img/gear.png"))); // NOI18N
-        btnSettings.setText("AJUSTES");
-        btnSettings.setToolTipText("");
-        btnSettings.setColorHover(new java.awt.Color(204, 204, 204));
-        btnSettings.setColorNormal(new java.awt.Color(239, 238, 244));
-        btnSettings.setColorPressed(new java.awt.Color(204, 204, 204));
-        btnSettings.setColorTextHover(new java.awt.Color(128, 128, 131));
-        btnSettings.setColorTextNormal(new java.awt.Color(128, 128, 131));
-        btnSettings.setColorTextPressed(new java.awt.Color(128, 128, 131));
-        btnSettings.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        btnSettings.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnSettings.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btnSettings.setIconTextGap(25);
-        btnSettings.setPreferredSize(new java.awt.Dimension(180, 35));
-        btnSettings.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnSettingsMousePressed(evt);
-            }
-        });
-        btnSettings.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSettingsActionPerformed(evt);
-            }
-        });
+        pnlMenu.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 210, -1));
 
         pnlHome.setBackground(new java.awt.Color(51, 153, 103));
 
@@ -285,6 +186,8 @@ public class frmPrincipal extends javax.swing.JFrame {
             .addGap(0, 50, Short.MAX_VALUE)
         );
 
+        pnlMenu.add(pnlHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 223, -1, -1));
+
         pnlPet.setBackground(new java.awt.Color(239, 238, 244));
 
         javax.swing.GroupLayout pnlPetLayout = new javax.swing.GroupLayout(pnlPet);
@@ -297,6 +200,8 @@ public class frmPrincipal extends javax.swing.JFrame {
             pnlPetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 50, Short.MAX_VALUE)
         );
+
+        pnlMenu.add(pnlPet, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 273, -1, -1));
 
         pnlOwner.setBackground(new java.awt.Color(239, 238, 244));
 
@@ -311,6 +216,8 @@ public class frmPrincipal extends javax.swing.JFrame {
             .addGap(0, 50, Short.MAX_VALUE)
         );
 
+        pnlMenu.add(pnlOwner, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 323, -1, -1));
+
         pnlSettings.setBackground(new java.awt.Color(239, 238, 244));
 
         javax.swing.GroupLayout pnlSettingsLayout = new javax.swing.GroupLayout(pnlSettings);
@@ -323,6 +230,8 @@ public class frmPrincipal extends javax.swing.JFrame {
             pnlSettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 50, Short.MAX_VALUE)
         );
+
+        pnlMenu.add(pnlSettings, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 373, -1, -1));
 
         jcMousePanel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/img/logo.png"))); // NOI18N
 
@@ -337,56 +246,107 @@ public class frmPrincipal extends javax.swing.JFrame {
             .addGap(0, 140, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout pnlMenuLayout = new javax.swing.GroupLayout(pnlMenu);
-        pnlMenu.setLayout(pnlMenuLayout);
-        pnlMenuLayout.setHorizontalGroup(
-            pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(pnlMenuLayout.createSequentialGroup()
-                .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jcMousePanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(pnlMenuLayout.createSequentialGroup()
-                        .addComponent(pnlHome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(btnHome, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlMenuLayout.createSequentialGroup()
-                        .addComponent(pnlPet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(btnPet, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlMenuLayout.createSequentialGroup()
-                        .addComponent(pnlOwner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(btnOwner, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlMenuLayout.createSequentialGroup()
-                        .addComponent(pnlSettings, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(btnSettings, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        pnlMenuLayout.setVerticalGroup(
-            pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlMenuLayout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jcMousePanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(pnlMenuLayout.createSequentialGroup()
-                        .addGap(130, 130, 130)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(13, 13, 13)
-                .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnlHome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnHome, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnlPet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPet, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnlOwner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnOwner, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnlSettings, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSettings, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(298, 298, 298))
-        );
+        pnlMenu.add(jcMousePanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
+
+        btnHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/img/home-run.png"))); // NOI18N
+        btnHome.setText("INICIO");
+        btnHome.setColorHover(new java.awt.Color(204, 204, 204));
+        btnHome.setColorNormal(new java.awt.Color(204, 204, 204));
+        btnHome.setColorPressed(new java.awt.Color(204, 204, 204));
+        btnHome.setColorTextHover(new java.awt.Color(128, 128, 131));
+        btnHome.setColorTextNormal(new java.awt.Color(128, 128, 131));
+        btnHome.setColorTextPressed(new java.awt.Color(128, 128, 131));
+        btnHome.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnHome.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnHome.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnHome.setIconTextGap(25);
+        btnHome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnHomeMousePressed(evt);
+            }
+        });
+        btnHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHomeActionPerformed(evt);
+            }
+        });
+        pnlMenu.add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 223, 190, 50));
+
+        btnPet.setBackground(new java.awt.Color(239, 238, 244));
+        btnPet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/img/pet.png"))); // NOI18N
+        btnPet.setText("MASCOTA");
+        btnPet.setToolTipText("");
+        btnPet.setColorHover(new java.awt.Color(204, 204, 204));
+        btnPet.setColorNormal(new java.awt.Color(239, 238, 244));
+        btnPet.setColorPressed(new java.awt.Color(204, 204, 204));
+        btnPet.setColorTextHover(new java.awt.Color(128, 128, 131));
+        btnPet.setColorTextNormal(new java.awt.Color(128, 128, 131));
+        btnPet.setColorTextPressed(new java.awt.Color(128, 128, 131));
+        btnPet.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnPet.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnPet.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnPet.setIconTextGap(25);
+        btnPet.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnPetMousePressed(evt);
+            }
+        });
+        btnPet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPetActionPerformed(evt);
+            }
+        });
+        pnlMenu.add(btnPet, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 273, 190, 50));
+
+        btnOwner.setBackground(new java.awt.Color(239, 238, 244));
+        btnOwner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/img/user.png"))); // NOI18N
+        btnOwner.setText("PROPIETARIO");
+        btnOwner.setColorHover(new java.awt.Color(204, 204, 204));
+        btnOwner.setColorNormal(new java.awt.Color(239, 238, 244));
+        btnOwner.setColorPressed(new java.awt.Color(204, 204, 204));
+        btnOwner.setColorTextHover(new java.awt.Color(128, 128, 131));
+        btnOwner.setColorTextNormal(new java.awt.Color(128, 128, 131));
+        btnOwner.setColorTextPressed(new java.awt.Color(128, 128, 131));
+        btnOwner.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnOwner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnOwner.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnOwner.setIconTextGap(25);
+        btnOwner.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnOwnerMousePressed(evt);
+            }
+        });
+        btnOwner.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOwnerActionPerformed(evt);
+            }
+        });
+        pnlMenu.add(btnOwner, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 323, 190, 50));
+
+        btnSettings.setBackground(new java.awt.Color(239, 238, 244));
+        btnSettings.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/img/gear.png"))); // NOI18N
+        btnSettings.setText("AJUSTES");
+        btnSettings.setColorHover(new java.awt.Color(204, 204, 204));
+        btnSettings.setColorNormal(new java.awt.Color(239, 238, 244));
+        btnSettings.setColorPressed(new java.awt.Color(204, 204, 204));
+        btnSettings.setColorTextHover(new java.awt.Color(128, 128, 131));
+        btnSettings.setColorTextNormal(new java.awt.Color(128, 128, 131));
+        btnSettings.setColorTextPressed(new java.awt.Color(128, 128, 131));
+        btnSettings.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnSettings.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnSettings.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnSettings.setIconTextGap(25);
+        btnSettings.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnSettingsMousePressed(evt);
+            }
+        });
+        btnSettings.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSettingsActionPerformed(evt);
+            }
+        });
+        pnlMenu.add(btnSettings, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 373, 190, 50));
 
         pnlContainer.setBackground(new java.awt.Color(239, 238, 244));
         pnlContainer.setPreferredSize(new java.awt.Dimension(1540, 710));
@@ -409,7 +369,7 @@ public class frmPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pnlMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pnlContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(pnlContainer, javax.swing.GroupLayout.DEFAULT_SIZE, 704, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

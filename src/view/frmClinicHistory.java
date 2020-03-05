@@ -25,7 +25,13 @@ public class frmClinicHistory extends javax.swing.JFrame {
         table.getColumnModel().getColumn(3).setCellRenderer(new TextAreaRenderer());
         table.getColumnModel().getColumn(4).setCellRenderer(new TextAreaRenderer());*/
 
+    }
 
+    private void openMedicalConsultation(String title) {
+        frmMedicalConsultation form = new frmMedicalConsultation();
+        form.show();
+        form.setLocationRelativeTo(this);
+        form.lblTitleMC.setText(title);
     }
 
     /**
@@ -66,10 +72,11 @@ public class frmClinicHistory extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
-        btnNewPet = new rojeru_san.RSButton();
+        btnNewMedicalConsultation = new rojeru_san.RSButton();
+        rSButton1 = new rojeru_san.RSButton();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        table = new RSMaterialComponent.RSTableMetroCustom();
+        tbClinicHistory = new RSMaterialComponent.RSTableMetroCustom();
 
         setUndecorated(true);
 
@@ -183,16 +190,16 @@ public class frmClinicHistory extends javax.swing.JFrame {
         jLabel7.setText("Raza:");
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel12.setText("N° Historia:");
+        jLabel12.setText("# historia");
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel13.setText("Especie");
+        jLabel13.setText("especie");
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel14.setText("Nombre");
+        jLabel14.setText("nombre");
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel15.setText("Raza");
+        jLabel15.setText("raza");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -254,19 +261,19 @@ public class frmClinicHistory extends javax.swing.JFrame {
         jLabel11.setText("Color");
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel16.setText("peso");
+        jLabel16.setText("color");
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel17.setText("Sexo");
+        jLabel17.setText("edad");
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel19.setText("color");
+        jLabel19.setText("sexo");
 
         jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel20.setText("Propietario");
 
         jLabel21.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel21.setText("temperatura");
+        jLabel21.setText("propietario");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -317,32 +324,43 @@ public class frmClinicHistory extends javax.swing.JFrame {
 
         jPanel7.setBackground(new java.awt.Color(239, 238, 244));
 
-        btnNewPet.setBackground(new java.awt.Color(128, 128, 242));
-        btnNewPet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons/anadir (1).png"))); // NOI18N
-        btnNewPet.setText("Consulta");
-        btnNewPet.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnNewPet.setIconTextGap(8);
-        btnNewPet.addActionListener(new java.awt.event.ActionListener() {
+        btnNewMedicalConsultation.setBackground(new java.awt.Color(38, 166, 154));
+        btnNewMedicalConsultation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons/anadir (1).png"))); // NOI18N
+        btnNewMedicalConsultation.setText("Consulta");
+        btnNewMedicalConsultation.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnNewMedicalConsultation.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnNewMedicalConsultation.setIconTextGap(25);
+        btnNewMedicalConsultation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNewPetActionPerformed(evt);
+                btnNewMedicalConsultationActionPerformed(evt);
             }
         });
+
+        rSButton1.setBackground(new java.awt.Color(255, 152, 0));
+        rSButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons/impresora.png"))); // NOI18N
+        rSButton1.setText("Imprimir");
+        rSButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        rSButton1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        rSButton1.setIconTextGap(25);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(0, 12, Short.MAX_VALUE)
-                .addComponent(btnNewPet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 12, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnNewMedicalConsultation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rSButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnNewPet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addComponent(btnNewMedicalConsultation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(rSButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 71, Short.MAX_VALUE))
         );
 
         jPanel3.add(jPanel7);
@@ -370,7 +388,7 @@ public class frmClinicHistory extends javax.swing.JFrame {
 
         jPanel2.add(rSPanelRound1);
 
-        table.setModel(new javax.swing.table.DefaultTableModel(
+        tbClinicHistory.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"2020/03/04", "C180", "39 grados", "orem Ipsum es simplemente un texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la mezcló para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y más recientemente con software de publicación de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum.", "orem Ipsum es simplemente un texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la mezcló para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y más recientemente con software de publicación de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum.", "orem Ipsum es simplemente un texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la mezcló para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y más recientemente con software de publicación de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum."},
                 {"2020/03/04", "C181", "39 grados", "orem Ipsum es simplemente un texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la mezcló para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y más recientemente con software de publicación de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum.", "orem Ipsum es simplemente un texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la mezcló para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y más recientemente con software de publicación de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum.", "orem Ipsum es simplemente un texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la mezcló para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y más recientemente con software de publicación de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum."},
@@ -389,38 +407,43 @@ public class frmClinicHistory extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        table.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
-        table.setBackgoundHead(new java.awt.Color(51, 153, 103));
-        table.setBackgoundHover(new java.awt.Color(204, 204, 204));
-        table.setColorPrimaryText(new java.awt.Color(0, 0, 0));
-        table.setColorSecondary(new java.awt.Color(239, 238, 244));
-        table.setColorSecundaryText(new java.awt.Color(0, 0, 0));
-        table.setEffectHover(true);
-        table.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        table.setFontHead(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        table.setFontRowHover(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        table.setFontRowSelect(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        table.setForegroundHover(new java.awt.Color(0, 0, 0));
-        table.setGridColor(new java.awt.Color(51, 153, 103));
-        table.setRowHeight(40);
-        table.setSelectionBackground(new java.awt.Color(204, 204, 204));
-        table.setSelectionForeground(new java.awt.Color(0, 0, 0));
-        table.setShowHorizontalLines(true);
-        table.setShowVerticalLines(true);
-        jScrollPane1.setViewportView(table);
-        if (table.getColumnModel().getColumnCount() > 0) {
-            table.getColumnModel().getColumn(0).setMinWidth(130);
-            table.getColumnModel().getColumn(0).setPreferredWidth(130);
-            table.getColumnModel().getColumn(0).setMaxWidth(130);
-            table.getColumnModel().getColumn(1).setMinWidth(100);
-            table.getColumnModel().getColumn(1).setPreferredWidth(100);
-            table.getColumnModel().getColumn(1).setMaxWidth(100);
-            table.getColumnModel().getColumn(2).setMinWidth(160);
-            table.getColumnModel().getColumn(2).setPreferredWidth(160);
-            table.getColumnModel().getColumn(2).setMaxWidth(160);
-            table.getColumnModel().getColumn(3).setMinWidth(80);
-            table.getColumnModel().getColumn(4).setMinWidth(80);
-            table.getColumnModel().getColumn(5).setMinWidth(80);
+        tbClinicHistory.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+        tbClinicHistory.setBackgoundHead(new java.awt.Color(51, 153, 103));
+        tbClinicHistory.setBackgoundHover(new java.awt.Color(204, 204, 204));
+        tbClinicHistory.setColorPrimaryText(new java.awt.Color(0, 0, 0));
+        tbClinicHistory.setColorSecondary(new java.awt.Color(239, 238, 244));
+        tbClinicHistory.setColorSecundaryText(new java.awt.Color(0, 0, 0));
+        tbClinicHistory.setEffectHover(true);
+        tbClinicHistory.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        tbClinicHistory.setFontHead(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        tbClinicHistory.setFontRowHover(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        tbClinicHistory.setFontRowSelect(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        tbClinicHistory.setForegroundHover(new java.awt.Color(0, 0, 0));
+        tbClinicHistory.setGridColor(new java.awt.Color(51, 153, 103));
+        tbClinicHistory.setRowHeight(40);
+        tbClinicHistory.setSelectionBackground(new java.awt.Color(204, 204, 204));
+        tbClinicHistory.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        tbClinicHistory.setShowHorizontalLines(true);
+        tbClinicHistory.setShowVerticalLines(true);
+        tbClinicHistory.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbClinicHistoryMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tbClinicHistory);
+        if (tbClinicHistory.getColumnModel().getColumnCount() > 0) {
+            tbClinicHistory.getColumnModel().getColumn(0).setMinWidth(130);
+            tbClinicHistory.getColumnModel().getColumn(0).setPreferredWidth(130);
+            tbClinicHistory.getColumnModel().getColumn(0).setMaxWidth(130);
+            tbClinicHistory.getColumnModel().getColumn(1).setMinWidth(100);
+            tbClinicHistory.getColumnModel().getColumn(1).setPreferredWidth(100);
+            tbClinicHistory.getColumnModel().getColumn(1).setMaxWidth(100);
+            tbClinicHistory.getColumnModel().getColumn(2).setMinWidth(160);
+            tbClinicHistory.getColumnModel().getColumn(2).setPreferredWidth(160);
+            tbClinicHistory.getColumnModel().getColumn(2).setMaxWidth(160);
+            tbClinicHistory.getColumnModel().getColumn(3).setMinWidth(80);
+            tbClinicHistory.getColumnModel().getColumn(4).setMinWidth(80);
+            tbClinicHistory.getColumnModel().getColumn(5).setMinWidth(80);
         }
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -510,9 +533,13 @@ public class frmClinicHistory extends javax.swing.JFrame {
         this.setLocation(evt.getXOnScreen() - layoutX, evt.getYOnScreen() - layoutY);
     }//GEN-LAST:event_pnlCHMouseDragged
 
-    private void btnNewPetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewPetActionPerformed
-        System.out.println("Nueva mascota");
-    }//GEN-LAST:event_btnNewPetActionPerformed
+    private void btnNewMedicalConsultationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewMedicalConsultationActionPerformed
+        openMedicalConsultation("Nueva Consulta");
+    }//GEN-LAST:event_btnNewMedicalConsultationActionPerformed
+
+    private void tbClinicHistoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbClinicHistoryMouseClicked
+        openMedicalConsultation("Detalle de Consulta");
+    }//GEN-LAST:event_tbClinicHistoryMouseClicked
 
     /**
      * @param args the command line arguments
@@ -553,7 +580,7 @@ public class frmClinicHistory extends javax.swing.JFrame {
     private rojeru_san.RSButton btnClose;
     private rojeru_san.RSButton btnMax;
     private rojeru_san.RSButton btnMin;
-    private rojeru_san.RSButton btnNewPet;
+    private rojeru_san.RSButton btnNewMedicalConsultation;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -581,7 +608,8 @@ public class frmClinicHistory extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel pnlCH;
+    private rojeru_san.RSButton rSButton1;
     private rojeru_san.rspanel.RSPanelRound rSPanelRound1;
-    private RSMaterialComponent.RSTableMetroCustom table;
+    private RSMaterialComponent.RSTableMetroCustom tbClinicHistory;
     // End of variables declaration//GEN-END:variables
 }
