@@ -24,6 +24,7 @@ public class frmClinicHistory extends javax.swing.JFrame {
     int layoutX;
     int layoutY;
     boolean max = false;
+    boolean showMC = false;
     frmMedicalConsultation formMC = new frmMedicalConsultation();
 
     public frmClinicHistory() {
@@ -39,6 +40,7 @@ public class frmClinicHistory extends javax.swing.JFrame {
         formMC.show();
         formMC.setLocationRelativeTo(this);
         formMC.lblTitleMC.setText(title);
+        showMC = true;
     }
 
     private void clean() {
@@ -515,6 +517,10 @@ public class frmClinicHistory extends javax.swing.JFrame {
     private void btnCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseClicked
         if (evt.getButton() == java.awt.event.MouseEvent.BUTTON1) {
             this.dispose();
+            if(showMC){
+                formMC.dispose();
+                showMC = false;
+            }
         }
     }//GEN-LAST:event_btnCloseMouseClicked
 

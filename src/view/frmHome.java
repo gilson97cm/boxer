@@ -38,9 +38,9 @@ public class frmHome extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
+        rSLabelHora1 = new rojeru_san.RSLabelHora();
+        rSLabelFecha1 = new rojeru_san.RSLabelFecha();
 
         setBackground(new java.awt.Color(239, 238, 244));
 
@@ -118,18 +118,6 @@ public class frmHome extends javax.swing.JPanel {
         jPanel5.setBackground(new java.awt.Color(0, 153, 153));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("10:35");
-        jPanel5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 70));
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("01/02/2020");
-        jPanel5.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 330, 80));
-
         jPanel6.setBackground(new java.awt.Color(239, 238, 244));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -144,6 +132,15 @@ public class frmHome extends javax.swing.JPanel {
         );
 
         jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 330, 1));
+
+        rSLabelHora1.setForeground(new java.awt.Color(255, 255, 255));
+        rSLabelHora1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jPanel5.add(rSLabelHora1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 70));
+
+        rSLabelFecha1.setForeground(new java.awt.Color(255, 255, 255));
+        rSLabelFecha1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        rSLabelFecha1.setFormato("yyyy/MM/dd");
+        jPanel5.add(rSLabelFecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 330, 80));
 
         jPanel7.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 20, 330, 170));
 
@@ -178,8 +175,6 @@ public class frmHome extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -188,5 +183,7 @@ public class frmHome extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private jcMousePanel.jcMousePanel jcMousePanel1;
+    private rojeru_san.RSLabelFecha rSLabelFecha1;
+    private rojeru_san.RSLabelHora rSLabelHora1;
     // End of variables declaration//GEN-END:variables
 }
