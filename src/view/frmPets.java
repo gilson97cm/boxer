@@ -5,6 +5,7 @@
  */
 package view;
 
+import java.util.Date;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,10 +19,10 @@ public class frmPets extends javax.swing.JPanel {
      */
     public frmPets() {
         initComponents();
+        this.dateCH.setDatoFecha(new Date());
     }
-    
-       public void openClinicHistory() {
 
+    public void openClinicHistory() {
         frmClinicHistory form = new frmClinicHistory();
         form.show();
         form.setLocationRelativeTo(this);
@@ -53,17 +54,15 @@ public class frmPets extends javax.swing.JPanel {
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         rSMTextFull1 = new rojeru_san.RSMTextFull();
         rSMTextFull3 = new rojeru_san.RSMTextFull();
         rSMTextFull4 = new rojeru_san.RSMTextFull();
         rSMTextFull5 = new rojeru_san.RSMTextFull();
         rSMTextFull6 = new rojeru_san.RSMTextFull();
-        rSMTextFull7 = new rojeru_san.RSMTextFull();
         rSRadioButtonMaterial1 = new RSMaterialComponent.RSRadioButtonMaterial();
         rSRadioButtonMaterial2 = new RSMaterialComponent.RSRadioButtonMaterial();
-        rSDateChooser1 = new newscomponents.RSDateChooser();
+        dateCH = new rojeru_san.rsdate.RSDateChooser();
         jPanel1 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
@@ -78,7 +77,7 @@ public class frmPets extends javax.swing.JPanel {
         jPanel7 = new javax.swing.JPanel();
         rSDesktopPane1 = new rojeru_san.rspanel.RSDesktopPane();
         btnNewPet = new rojeru_san.RSButton();
-        rSButton3 = new rojeru_san.RSButton();
+        btnSavePet = new rojeru_san.RSButton();
         rSButton4 = new rojeru_san.RSButton();
         rSButton5 = new rojeru_san.RSButton();
 
@@ -153,28 +152,25 @@ public class frmPets extends javax.swing.JPanel {
         jPanel8.setBackground(new java.awt.Color(239, 238, 244));
 
         jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel18.setText("Nombre:");
+        jLabel18.setText("N° Historia:");
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel14.setText("Especie");
+        jLabel14.setText("Nombre:");
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel15.setText("Raza:");
+        jLabel15.setText("Especie:");
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel16.setText("Edad:");
+        jLabel16.setText("Raza:");
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel19.setText("Sexo:");
+        jLabel19.setText("Edad:");
 
         jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel20.setText("Peso:");
+        jLabel20.setText("Color:");
 
         jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel21.setText("Color:");
-
-        jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel22.setText("Temperatura");
+        jLabel21.setText("Sexo:");
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 51, 51));
@@ -210,12 +206,6 @@ public class frmPets extends javax.swing.JPanel {
         rSMTextFull6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         rSMTextFull6.setPlaceholder("");
 
-        rSMTextFull7.setForeground(new java.awt.Color(0, 0, 0));
-        rSMTextFull7.setBordeColorFocus(new java.awt.Color(51, 153, 103));
-        rSMTextFull7.setBotonColor(new java.awt.Color(51, 153, 103));
-        rSMTextFull7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        rSMTextFull7.setPlaceholder("");
-
         buttonGroup1.add(rSRadioButtonMaterial1);
         rSRadioButtonMaterial1.setForeground(new java.awt.Color(0, 0, 0));
         rSRadioButtonMaterial1.setText("Hembra");
@@ -230,8 +220,11 @@ public class frmPets extends javax.swing.JPanel {
         rSRadioButtonMaterial2.setColorUnCheck(new java.awt.Color(0, 0, 0));
         rSRadioButtonMaterial2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        rSDateChooser1.setBgColor(new java.awt.Color(51, 153, 103));
-        rSDateChooser1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        dateCH.setColorBackground(new java.awt.Color(51, 153, 103));
+        dateCH.setColorForeground(new java.awt.Color(0, 0, 0));
+        dateCH.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        dateCH.setFuente(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        dateCH.setPlaceholder("");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -239,42 +232,36 @@ public class frmPets extends javax.swing.JPanel {
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(rSMTextFull5, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel8Layout.createSequentialGroup()
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel16)
                             .addGroup(jPanel8Layout.createSequentialGroup()
-                                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel17)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(rSMTextFull1, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                    .addComponent(rSMTextFull3, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                    .addComponent(rSMTextFull4, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                    .addComponent(rSDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addGap(0, 138, Short.MAX_VALUE))
+                    .addComponent(rSMTextFull1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
+                    .addComponent(rSMTextFull3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
+                    .addComponent(rSMTextFull4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rSMTextFull6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rSMTextFull6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(rSMTextFull5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(rSMTextFull7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel8Layout.createSequentialGroup()
-                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel22)
-                                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(rSRadioButtonMaterial2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(rSRadioButtonMaterial1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addComponent(rSRadioButtonMaterial2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(rSRadioButtonMaterial1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(dateCH, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -284,10 +271,9 @@ public class frmPets extends javax.swing.JPanel {
                     .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(rSMTextFull1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSRadioButtonMaterial1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSRadioButtonMaterial2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dateCH, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -295,7 +281,8 @@ public class frmPets extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rSMTextFull3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSMTextFull5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rSRadioButtonMaterial2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rSRadioButtonMaterial1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -305,14 +292,10 @@ public class frmPets extends javax.swing.JPanel {
                     .addComponent(rSMTextFull4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(rSMTextFull6, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rSMTextFull7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 25, Short.MAX_VALUE))
+                .addComponent(rSMTextFull5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -410,7 +393,7 @@ public class frmPets extends javax.swing.JPanel {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rSMTextFull8, javax.swing.GroupLayout.DEFAULT_SIZE, 504, Short.MAX_VALUE)
+                    .addComponent(rSMTextFull8, javax.swing.GroupLayout.DEFAULT_SIZE, 502, Short.MAX_VALUE)
                     .addComponent(rSMTextFull9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(rSMTextFull10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel9Layout.createSequentialGroup()
@@ -484,13 +467,18 @@ public class frmPets extends javax.swing.JPanel {
         rSDesktopPane1.add(btnNewPet);
         btnNewPet.setBounds(150, 10, 200, 40);
 
-        rSButton3.setBackground(new java.awt.Color(76, 175, 80));
-        rSButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons/seguro (1).png"))); // NOI18N
-        rSButton3.setText("Guardar");
-        rSButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        rSButton3.setIconTextGap(8);
-        rSDesktopPane1.add(rSButton3);
-        rSButton3.setBounds(370, 10, 200, 40);
+        btnSavePet.setBackground(new java.awt.Color(76, 175, 80));
+        btnSavePet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons/seguro (1).png"))); // NOI18N
+        btnSavePet.setText("Guardar");
+        btnSavePet.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnSavePet.setIconTextGap(8);
+        btnSavePet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSavePetActionPerformed(evt);
+            }
+        });
+        rSDesktopPane1.add(btnSavePet);
+        btnSavePet.setBounds(370, 10, 200, 40);
 
         rSButton4.setBackground(new java.awt.Color(255, 152, 0));
         rSButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons/papel (5).png"))); // NOI18N
@@ -537,15 +525,20 @@ public class frmPets extends javax.swing.JPanel {
     }//GEN-LAST:event_btnNewPetActionPerformed
 
     private void rSButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButton1ActionPerformed
-       openClinicHistory();
+        openClinicHistory();
     }//GEN-LAST:event_rSButton1ActionPerformed
 
-    
+    private void btnSavePetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSavePetActionPerformed
+        openClinicHistory();
+    }//GEN-LAST:event_btnSavePetActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private org.jdesktop.swingx.plaf.basic.BasicDatePickerUI basicDatePickerUI1;
     private rojeru_san.RSButton btnNewPet;
+    private rojeru_san.RSButton btnSavePet;
     private javax.swing.ButtonGroup buttonGroup1;
+    private rojeru_san.rsdate.RSDateChooser dateCH;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -554,7 +547,6 @@ public class frmPets extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
@@ -569,12 +561,10 @@ public class frmPets extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JPanel pnlPrincipal;
     private rojeru_san.RSButton rSButton1;
-    private rojeru_san.RSButton rSButton3;
     private rojeru_san.RSButton rSButton4;
     private rojeru_san.RSButton rSButton5;
     private rojeru_san.RSButton rSButton7;
     private rojerusan.RSComboMetro rSComboMetro1;
-    private newscomponents.RSDateChooser rSDateChooser1;
     private rojeru_san.rspanel.RSDesktopPane rSDesktopPane1;
     private rojeru_san.RSMTextFull rSMTextFull1;
     private rojeru_san.RSMTextFull rSMTextFull10;
@@ -583,7 +573,6 @@ public class frmPets extends javax.swing.JPanel {
     private rojeru_san.RSMTextFull rSMTextFull4;
     private rojeru_san.RSMTextFull rSMTextFull5;
     private rojeru_san.RSMTextFull rSMTextFull6;
-    private rojeru_san.RSMTextFull rSMTextFull7;
     private rojeru_san.RSMTextFull rSMTextFull8;
     private rojeru_san.RSMTextFull rSMTextFull9;
     private RSMaterialComponent.RSRadioButtonMaterial rSRadioButtonMaterial1;

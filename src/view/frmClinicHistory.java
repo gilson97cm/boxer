@@ -5,6 +5,13 @@
  */
 package view;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author GILSON
@@ -17,6 +24,7 @@ public class frmClinicHistory extends javax.swing.JFrame {
     int layoutX;
     int layoutY;
     boolean max = false;
+    frmMedicalConsultation formMC = new frmMedicalConsultation();
 
     public frmClinicHistory() {
         initComponents();
@@ -28,10 +36,18 @@ public class frmClinicHistory extends javax.swing.JFrame {
     }
 
     private void openMedicalConsultation(String title) {
-        frmMedicalConsultation form = new frmMedicalConsultation();
-        form.show();
-        form.setLocationRelativeTo(this);
-        form.lblTitleMC.setText(title);
+        formMC.show();
+        formMC.setLocationRelativeTo(this);
+        formMC.lblTitleMC.setText(title);
+    }
+
+    private void clean() {
+        formMC.dateMC.setDatoFecha(new Date());
+        formMC.txtWeightMC.setText("");
+        formMC.txtTempMC.setText("");
+        formMC.txtNamesisMC.setText("");
+        formMC.txtObservationMC.setText("");
+        formMC.txtTreatmentMC.setText("");
     }
 
     /**
@@ -58,7 +74,7 @@ public class frmClinicHistory extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        lblNumHistoryCH = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -189,8 +205,8 @@ public class frmClinicHistory extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel7.setText("Raza:");
 
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel12.setText("# historia");
+        lblNumHistoryCH.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblNumHistoryCH.setText("C180");
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel13.setText("especie");
@@ -211,7 +227,7 @@ public class frmClinicHistory extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblNumHistoryCH, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -231,7 +247,7 @@ public class frmClinicHistory extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblNumHistoryCH, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -328,8 +344,9 @@ public class frmClinicHistory extends javax.swing.JFrame {
         btnNewMedicalConsultation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons/anadir (1).png"))); // NOI18N
         btnNewMedicalConsultation.setText("Consulta");
         btnNewMedicalConsultation.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnNewMedicalConsultation.setHideActionText(true);
         btnNewMedicalConsultation.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btnNewMedicalConsultation.setIconTextGap(25);
+        btnNewMedicalConsultation.setIconTextGap(8);
         btnNewMedicalConsultation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNewMedicalConsultationActionPerformed(evt);
@@ -341,7 +358,7 @@ public class frmClinicHistory extends javax.swing.JFrame {
         rSButton1.setText("Imprimir");
         rSButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         rSButton1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        rSButton1.setIconTextGap(25);
+        rSButton1.setIconTextGap(8);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -349,10 +366,10 @@ public class frmClinicHistory extends javax.swing.JFrame {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnNewMedicalConsultation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnNewMedicalConsultation, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                    .addComponent(rSButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -388,6 +405,7 @@ public class frmClinicHistory extends javax.swing.JFrame {
 
         jPanel2.add(rSPanelRound1);
 
+        tbClinicHistory.setBackground(new java.awt.Color(240, 240, 240));
         tbClinicHistory.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"2020/03/04", "C180", "39 grados", "orem Ipsum es simplemente un texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la mezcló para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y más recientemente con software de publicación de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum.", "orem Ipsum es simplemente un texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la mezcló para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y más recientemente con software de publicación de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum.", "orem Ipsum es simplemente un texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la mezcló para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y más recientemente con software de publicación de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum."},
@@ -534,11 +552,36 @@ public class frmClinicHistory extends javax.swing.JFrame {
     }//GEN-LAST:event_pnlCHMouseDragged
 
     private void btnNewMedicalConsultationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewMedicalConsultationActionPerformed
+        clean();
         openMedicalConsultation("Nueva Consulta");
+        //numero de historia
+        formMC.lblNumHistoryMC.setText(this.lblNumHistoryCH.getText().toString());
     }//GEN-LAST:event_btnNewMedicalConsultationActionPerformed
 
     private void tbClinicHistoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbClinicHistoryMouseClicked
-        openMedicalConsultation("Detalle de Consulta");
+
+        try {
+            openMedicalConsultation("Detalle de Consulta");
+
+            //numero de historia
+            formMC.lblNumHistoryMC.setText(this.lblNumHistoryCH.getText().toString());
+            //llenar con datos de la fila
+            DefaultTableModel model = (DefaultTableModel) tbClinicHistory.getModel();
+            int row = tbClinicHistory.getSelectedRow();
+            // el que parsea
+            SimpleDateFormat parseador = new SimpleDateFormat("yyyy/MM/dd");
+            Date date = parseador.parse(model.getValueAt(row, 0).toString());
+            formMC.dateMC.setDatoFecha(date);
+            formMC.txtWeightMC.setText(model.getValueAt(row, 1).toString());
+            formMC.txtTempMC.setText(model.getValueAt(row, 2).toString());
+            formMC.txtNamesisMC.setText(model.getValueAt(row, 3).toString());
+            formMC.txtObservationMC.setText(model.getValueAt(row, 4).toString());
+            formMC.txtTreatmentMC.setText(model.getValueAt(row, 5).toString());
+        } catch (ParseException ex) {
+            Logger.getLogger(frmClinicHistory.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
     }//GEN-LAST:event_tbClinicHistoryMouseClicked
 
     /**
@@ -584,7 +627,6 @@ public class frmClinicHistory extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -607,6 +649,7 @@ public class frmClinicHistory extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblNumHistoryCH;
     private javax.swing.JPanel pnlCH;
     private rojeru_san.RSButton rSButton1;
     private rojeru_san.rspanel.RSPanelRound rSPanelRound1;
