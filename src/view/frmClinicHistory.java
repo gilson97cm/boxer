@@ -42,6 +42,30 @@ public class frmClinicHistory extends javax.swing.JFrame {
         formMC.lblTitleMC.setText(title);
         showMC = true;
     }
+    
+    private void historyDetail(){
+            try {
+            openMedicalConsultation("Detalle de Consulta");
+
+            //numero de historia
+            formMC.lblNumHistoryMC.setText(this.lblNumHistoryCH.getText().toString());
+            //llenar con datos de la fila
+            DefaultTableModel model = (DefaultTableModel) tbClinicHistory.getModel();
+            int row = tbClinicHistory.getSelectedRow();
+            // el que parsea
+            SimpleDateFormat parseador = new SimpleDateFormat("yyyy/MM/dd");
+            Date date = parseador.parse(model.getValueAt(row, 0).toString());
+            formMC.dateMC.setDatoFecha(date);
+            formMC.txtWeightMC.setText(model.getValueAt(row, 1).toString());
+            formMC.txtTempMC.setText(model.getValueAt(row, 2).toString());
+            formMC.txtHistoryMC.setText(model.getValueAt(row, 3).toString());
+            formMC.txtObservationMC.setText(model.getValueAt(row, 4).toString());
+            formMC.txtTreatmentMC.setText(model.getValueAt(row, 5).toString());
+        } catch (ParseException ex) {
+            Logger.getLogger(frmClinicHistory.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
 
     private void clean() {
         formMC.dateMC.setDatoFecha(new Date());
@@ -65,7 +89,6 @@ public class frmClinicHistory extends javax.swing.JFrame {
         pnlCH = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnClose = new rojeru_san.RSButton();
-        btnMax = new rojeru_san.RSButton();
         btnMin = new rojeru_san.RSButton();
         jPanel2 = new javax.swing.JPanel();
         rSPanelRound1 = new rojeru_san.rspanel.RSPanelRound();
@@ -93,8 +116,8 @@ public class frmClinicHistory extends javax.swing.JFrame {
         btnNewMedicalConsultation = new rojeru_san.RSButton();
         rSButton1 = new rojeru_san.RSButton();
         jPanel5 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tbClinicHistory = new RSMaterialComponent.RSTableMetroCustom();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tbClinicHistory = new rojerusan.RSTableMetro();
 
         setUndecorated(true);
 
@@ -113,7 +136,7 @@ public class frmClinicHistory extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Historia Clinica");
@@ -131,17 +154,6 @@ public class frmClinicHistory extends javax.swing.JFrame {
         btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCloseActionPerformed(evt);
-            }
-        });
-
-        btnMax.setBackground(new java.awt.Color(51, 153, 51));
-        btnMax.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons/max.png"))); // NOI18N
-        btnMax.setColorHover(new java.awt.Color(102, 102, 102));
-        btnMax.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnMax.setIconTextGap(0);
-        btnMax.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnMaxMouseClicked(evt);
             }
         });
 
@@ -165,8 +177,6 @@ public class frmClinicHistory extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnMin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnMax, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         pnlCHLayout.setVerticalGroup(
@@ -177,7 +187,6 @@ public class frmClinicHistory extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnMax, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnMin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
@@ -371,7 +380,7 @@ public class frmClinicHistory extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnNewMedicalConsultation, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
                     .addComponent(rSButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(170, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -410,10 +419,9 @@ public class frmClinicHistory extends javax.swing.JFrame {
         tbClinicHistory.setBackground(new java.awt.Color(240, 240, 240));
         tbClinicHistory.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"2020/03/04", "5 lb", "39 grados", "orem Ipsum es simplemente un texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la mezcló para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y más recientemente con software de publicación de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum.", "orem Ipsum es simplemente un texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la mezcló para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y más recientemente con software de publicación de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum.", "orem Ipsum es simplemente un texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la mezcló para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y más recientemente con software de publicación de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum."},
-                {"2020/03/04", "5 llb", "39 grados", "orem Ipsum es simplemente un texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la mezcló para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y más recientemente con software de publicación de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum.", "orem Ipsum es simplemente un texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la mezcló para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y más recientemente con software de publicación de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum.", "orem Ipsum es simplemente un texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la mezcló para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y más recientemente con software de publicación de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum."},
-                {"2020/03/04", "8 lb", "39 grados", "orem Ipsum es simplemente un texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la mezcló para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y más recientemente con software de publicación de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum.", "orem Ipsum es simplemente un texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la mezcló para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y más recientemente con software de publicación de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum.", "orem Ipsum es simplemente un texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la mezcló para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y más recientemente con software de publicación de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum."},
-                {"2020/03/04", "12 lb", "39 grados", "orem Ipsum es simplemente un texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la mezcló para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y más recientemente con software de publicación de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum.", "orem Ipsum es simplemente un texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la mezcló para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y más recientemente con software de publicación de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum.", "orem Ipsum es simplemente un texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la mezcló para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y más recientemente con software de publicación de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum."}
+                {"2020/03/05", "5 lb", "37 grados", "Lorem Ipsum es simplemente un texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la mezcló para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y más recientemente con software de publicación de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum.", "Lorem Ipsum es simplemente un texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la mezcló para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y más recientemente con software de publicación de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum.", "Lorem Ipsum es simplemente un texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la mezcló para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y más recientemente con software de publicación de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum."},
+                {"2020/03/05", "8 lb", "36 grados", "Lorem Ipsum es simplemente un texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la mezcló para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y más recientemente con software de publicación de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum.", "Lorem Ipsum es simplemente un texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la mezcló para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y más recientemente con software de publicación de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum.", "Lorem Ipsum es simplemente un texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la mezcló para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y más recientemente con software de publicación de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum."},
+                {"2020/03/05", "9 lb", "38 grados", "Lorem Ipsum es simplemente un texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la mezcló para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y más recientemente con software de publicación de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum.", "Lorem Ipsum es simplemente un texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la mezcló para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y más recientemente con software de publicación de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum.", "Lorem Ipsum es simplemente un texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la mezcló para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios. Se popularizó en la década de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y más recientemente con software de publicación de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum."}
             },
             new String [] {
                 "FECHA", "PESO", "TEMPERATURA", "ANAMNESIS", "OBSERVACIONES", "TRATAMIENTO"
@@ -430,51 +438,51 @@ public class frmClinicHistory extends javax.swing.JFrame {
         tbClinicHistory.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
         tbClinicHistory.setBackgoundHead(new java.awt.Color(51, 153, 103));
         tbClinicHistory.setBackgoundHover(new java.awt.Color(204, 204, 204));
+        tbClinicHistory.setColorBorderHead(new java.awt.Color(51, 153, 103));
+        tbClinicHistory.setColorBorderRows(new java.awt.Color(51, 153, 103));
         tbClinicHistory.setColorPrimaryText(new java.awt.Color(0, 0, 0));
         tbClinicHistory.setColorSecondary(new java.awt.Color(239, 238, 244));
         tbClinicHistory.setColorSecundaryText(new java.awt.Color(0, 0, 0));
-        tbClinicHistory.setEffectHover(true);
         tbClinicHistory.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tbClinicHistory.setFontHead(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        tbClinicHistory.setFontRowHover(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        tbClinicHistory.setFontRowHover(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         tbClinicHistory.setFontRowSelect(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         tbClinicHistory.setForegroundHover(new java.awt.Color(0, 0, 0));
         tbClinicHistory.setGridColor(new java.awt.Color(51, 153, 103));
         tbClinicHistory.setRowHeight(40);
         tbClinicHistory.setSelectionBackground(new java.awt.Color(204, 204, 204));
         tbClinicHistory.setSelectionForeground(new java.awt.Color(0, 0, 0));
-        tbClinicHistory.setShowHorizontalLines(true);
-        tbClinicHistory.setShowVerticalLines(true);
         tbClinicHistory.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tbClinicHistoryMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(tbClinicHistory);
+        jScrollPane2.setViewportView(tbClinicHistory);
         if (tbClinicHistory.getColumnModel().getColumnCount() > 0) {
-            tbClinicHistory.getColumnModel().getColumn(0).setMinWidth(130);
-            tbClinicHistory.getColumnModel().getColumn(0).setPreferredWidth(130);
-            tbClinicHistory.getColumnModel().getColumn(0).setMaxWidth(130);
-            tbClinicHistory.getColumnModel().getColumn(1).setMinWidth(100);
-            tbClinicHistory.getColumnModel().getColumn(1).setPreferredWidth(100);
-            tbClinicHistory.getColumnModel().getColumn(1).setMaxWidth(100);
+            tbClinicHistory.getColumnModel().getColumn(0).setMinWidth(140);
+            tbClinicHistory.getColumnModel().getColumn(0).setPreferredWidth(140);
+            tbClinicHistory.getColumnModel().getColumn(0).setMaxWidth(140);
+            tbClinicHistory.getColumnModel().getColumn(1).setMinWidth(90);
+            tbClinicHistory.getColumnModel().getColumn(1).setPreferredWidth(90);
+            tbClinicHistory.getColumnModel().getColumn(1).setMaxWidth(90);
             tbClinicHistory.getColumnModel().getColumn(2).setMinWidth(160);
             tbClinicHistory.getColumnModel().getColumn(2).setPreferredWidth(160);
             tbClinicHistory.getColumnModel().getColumn(2).setMaxWidth(160);
-            tbClinicHistory.getColumnModel().getColumn(3).setMinWidth(80);
-            tbClinicHistory.getColumnModel().getColumn(4).setMinWidth(80);
-            tbClinicHistory.getColumnModel().getColumn(5).setMinWidth(80);
+            tbClinicHistory.getColumnModel().getColumn(3).setMinWidth(140);
+            tbClinicHistory.getColumnModel().getColumn(4).setMinWidth(140);
+            tbClinicHistory.getColumnModel().getColumn(5).setMinWidth(140);
         }
+        tbClinicHistory.getAccessibleContext().setAccessibleDescription("");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
+            .addComponent(jScrollPane2)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 416, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 445, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -485,7 +493,7 @@ public class frmClinicHistory extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1423, Short.MAX_VALUE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -528,18 +536,6 @@ public class frmClinicHistory extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnCloseActionPerformed
 
-    private void btnMaxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMaxMouseClicked
-        if (evt.getButton() == java.awt.event.MouseEvent.BUTTON1) {
-            if (!max) {
-                this.setExtendedState(MAXIMIZED_BOTH);
-                max = true;
-            } else {
-                this.setExtendedState(NORMAL);
-                max = false;
-            }
-        }
-    }//GEN-LAST:event_btnMaxMouseClicked
-
     private void btnMinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMinMouseClicked
         if (evt.getButton() == java.awt.event.MouseEvent.BUTTON1) {
             this.setExtendedState(ICONIFIED);
@@ -565,29 +561,7 @@ public class frmClinicHistory extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNewMedicalConsultationActionPerformed
 
     private void tbClinicHistoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbClinicHistoryMouseClicked
-
-        try {
-            openMedicalConsultation("Detalle de Consulta");
-
-            //numero de historia
-            formMC.lblNumHistoryMC.setText(this.lblNumHistoryCH.getText().toString());
-            //llenar con datos de la fila
-            DefaultTableModel model = (DefaultTableModel) tbClinicHistory.getModel();
-            int row = tbClinicHistory.getSelectedRow();
-            // el que parsea
-            SimpleDateFormat parseador = new SimpleDateFormat("yyyy/MM/dd");
-            Date date = parseador.parse(model.getValueAt(row, 0).toString());
-            formMC.dateMC.setDatoFecha(date);
-            formMC.txtWeightMC.setText(model.getValueAt(row, 1).toString());
-            formMC.txtTempMC.setText(model.getValueAt(row, 2).toString());
-            formMC.txtHistoryMC.setText(model.getValueAt(row, 3).toString());
-            formMC.txtObservationMC.setText(model.getValueAt(row, 4).toString());
-            formMC.txtTreatmentMC.setText(model.getValueAt(row, 5).toString());
-        } catch (ParseException ex) {
-            Logger.getLogger(frmClinicHistory.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-
+        historyDetail();
     }//GEN-LAST:event_tbClinicHistoryMouseClicked
 
     /**
@@ -627,7 +601,6 @@ public class frmClinicHistory extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private rojeru_san.RSButton btnClose;
-    private rojeru_san.RSButton btnMax;
     private rojeru_san.RSButton btnMin;
     private rojeru_san.RSButton btnNewMedicalConsultation;
     private javax.swing.JLabel jLabel1;
@@ -654,11 +627,11 @@ public class frmClinicHistory extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblNumHistoryCH;
     private javax.swing.JPanel pnlCH;
     private rojeru_san.RSButton rSButton1;
     private rojeru_san.rspanel.RSPanelRound rSPanelRound1;
-    private RSMaterialComponent.RSTableMetroCustom tbClinicHistory;
+    private rojerusan.RSTableMetro tbClinicHistory;
     // End of variables declaration//GEN-END:variables
 }

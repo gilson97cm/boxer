@@ -27,32 +27,157 @@ public class frmOwner extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        rSMTextFull1 = new rojeru_san.RSMTextFull();
+        rSButton7 = new rojeru_san.RSButton();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        rSTableMetro1 = new RSMaterialComponent.RSTableMetro();
 
-        setBackground(new java.awt.Color(153, 102, 255));
+        setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setText("fin");
+        jPanel1.setBackground(new java.awt.Color(239, 238, 244));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 103)));
+
+        jPanel2.setBackground(new java.awt.Color(239, 238, 244));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Buscar:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 15))); // NOI18N
+
+        rSMTextFull1.setForeground(new java.awt.Color(0, 0, 0));
+        rSMTextFull1.setBordeColorFocus(new java.awt.Color(51, 153, 103));
+        rSMTextFull1.setBotonColor(new java.awt.Color(51, 153, 103));
+        rSMTextFull1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        rSMTextFull1.setPlaceholder("Nombre del Propietario");
+
+        rSButton7.setBackground(new java.awt.Color(239, 238, 244));
+        rSButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons/papel (6).png"))); // NOI18N
+        rSButton7.setColorHover(new java.awt.Color(239, 238, 244));
+        rSButton7.setColorText(new java.awt.Color(239, 238, 244));
+        rSButton7.setColorTextHover(new java.awt.Color(239, 238, 244));
+        rSButton7.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons/papel (7).png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(rSMTextFull1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(rSButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rSButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rSMTextFull1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(18, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(329, 329, 329)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(374, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        jPanel3.setBackground(new java.awt.Color(239, 238, 244));
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 103)));
+
+        rSTableMetro1.setBackground(new java.awt.Color(240, 240, 240));
+        rSTableMetro1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"propietario", "direccion", "0999999999", "1"},
+                {"propietario", "direccion", "0999999999", "2"}
+            },
+            new String [] {
+                "NOMBRE", "DIRECCIÓN", "TELÉFONO", "# DE MASCOTAS"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        rSTableMetro1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+        rSTableMetro1.setBackgoundHead(new java.awt.Color(51, 153, 103));
+        rSTableMetro1.setBackgoundHover(new java.awt.Color(204, 204, 204));
+        rSTableMetro1.setColorBorderHead(new java.awt.Color(51, 153, 103));
+        rSTableMetro1.setColorBorderRows(new java.awt.Color(51, 153, 103));
+        rSTableMetro1.setColorPrimaryText(new java.awt.Color(0, 0, 0));
+        rSTableMetro1.setColorSecondary(new java.awt.Color(239, 238, 244));
+        rSTableMetro1.setColorSecundaryText(new java.awt.Color(0, 0, 0));
+        rSTableMetro1.setEffectHover(true);
+        rSTableMetro1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        rSTableMetro1.setFontHead(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        rSTableMetro1.setFontRowHover(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        rSTableMetro1.setFontRowSelect(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        rSTableMetro1.setForegroundHover(new java.awt.Color(0, 0, 0));
+        rSTableMetro1.setGridColor(new java.awt.Color(51, 153, 103));
+        rSTableMetro1.setRowHeight(40);
+        rSTableMetro1.setSelectionBackground(new java.awt.Color(204, 204, 204));
+        rSTableMetro1.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        jScrollPane2.setViewportView(rSTableMetro1);
+        if (rSTableMetro1.getColumnModel().getColumnCount() > 0) {
+            rSTableMetro1.getColumnModel().getColumn(0).setResizable(false);
+            rSTableMetro1.getColumnModel().getColumn(1).setResizable(false);
+            rSTableMetro1.getColumnModel().getColumn(2).setResizable(false);
+            rSTableMetro1.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(1073, Short.MAX_VALUE)
-                .addComponent(jLabel2)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(699, Short.MAX_VALUE)
-                .addComponent(jLabel2)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane2;
+    private rojeru_san.RSButton rSButton7;
+    private rojeru_san.RSMTextFull rSMTextFull1;
+    private RSMaterialComponent.RSTableMetro rSTableMetro1;
     // End of variables declaration//GEN-END:variables
 }

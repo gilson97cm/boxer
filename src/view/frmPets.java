@@ -20,12 +20,23 @@ public class frmPets extends javax.swing.JPanel {
     public frmPets() {
         initComponents();
         this.dateCH.setDatoFecha(new Date());
+        txtSearchPet.setPlaceholder("Número de Historia");
     }
 
     public void openClinicHistory() {
         frmClinicHistory form = new frmClinicHistory();
         form.show();
         form.setLocationRelativeTo(this);
+    }
+
+    private void changePlaceHolderSearch() {
+        if (this.cmbPet.getSelectedIndex() == 0) {
+            txtSearchPet.setPlaceholder("Número de Historia");
+        } else if (this.cmbPet.getSelectedIndex() == 1) {
+            txtSearchPet.setPlaceholder("Nombre de la Mascota");
+        }else if (this.cmbPet.getSelectedIndex() == 2) {
+            txtSearchPet.setPlaceholder("Nombre del Propietario");
+        }
     }
 
     /**
@@ -41,8 +52,8 @@ public class frmPets extends javax.swing.JPanel {
         basicDatePickerUI1 = new org.jdesktop.swingx.plaf.basic.BasicDatePickerUI();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
-        rSComboMetro1 = new rojerusan.RSComboMetro();
-        rSMTextFull2 = new rojeru_san.RSMTextFull();
+        cmbPet = new rojerusan.RSComboMetro();
+        txtSearchPet = new rojeru_san.RSMTextFull();
         rSButton7 = new rojeru_san.RSButton();
         pnlPrincipal = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
@@ -89,17 +100,22 @@ public class frmPets extends javax.swing.JPanel {
         jPanel5.setBackground(new java.awt.Color(239, 238, 244));
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Buscar:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 15))); // NOI18N
 
-        rSComboMetro1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Historia", "Mascota", "Propietario" }));
-        rSComboMetro1.setColorArrow(new java.awt.Color(51, 153, 103));
-        rSComboMetro1.setColorBorde(new java.awt.Color(51, 153, 103));
-        rSComboMetro1.setColorFondo(new java.awt.Color(51, 153, 103));
-        rSComboMetro1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        cmbPet.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Historia", "Mascota", "Propietario" }));
+        cmbPet.setColorArrow(new java.awt.Color(51, 153, 103));
+        cmbPet.setColorBorde(new java.awt.Color(51, 153, 103));
+        cmbPet.setColorFondo(new java.awt.Color(51, 153, 103));
+        cmbPet.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        cmbPet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbPetActionPerformed(evt);
+            }
+        });
 
-        rSMTextFull2.setForeground(new java.awt.Color(0, 0, 0));
-        rSMTextFull2.setBordeColorFocus(new java.awt.Color(51, 153, 103));
-        rSMTextFull2.setBotonColor(new java.awt.Color(51, 153, 103));
-        rSMTextFull2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        rSMTextFull2.setPlaceholder("");
+        txtSearchPet.setForeground(new java.awt.Color(0, 0, 0));
+        txtSearchPet.setBordeColorFocus(new java.awt.Color(51, 153, 103));
+        txtSearchPet.setBotonColor(new java.awt.Color(51, 153, 103));
+        txtSearchPet.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtSearchPet.setPlaceholder("");
 
         rSButton7.setBackground(new java.awt.Color(239, 238, 244));
         rSButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons/papel (6).png"))); // NOI18N
@@ -114,9 +130,9 @@ public class frmPets extends javax.swing.JPanel {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(rSMTextFull2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtSearchPet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(rSComboMetro1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cmbPet, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(rSButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -125,8 +141,8 @@ public class frmPets extends javax.swing.JPanel {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rSComboMetro1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSMTextFull2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbPet, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSearchPet, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(rSButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -541,12 +557,17 @@ public class frmPets extends javax.swing.JPanel {
         openClinicHistory();
     }//GEN-LAST:event_btnSavePetActionPerformed
 
+    private void cmbPetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbPetActionPerformed
+          changePlaceHolderSearch();
+    }//GEN-LAST:event_cmbPetActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private org.jdesktop.swingx.plaf.basic.BasicDatePickerUI basicDatePickerUI1;
     private rojeru_san.RSButton btnNewPet;
     private rojeru_san.RSButton btnSavePet;
     private javax.swing.ButtonGroup buttonGroup1;
+    private rojerusan.RSComboMetro cmbPet;
     private rojeru_san.rsdate.RSDateChooser dateCH;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -574,11 +595,9 @@ public class frmPets extends javax.swing.JPanel {
     private rojeru_san.RSButton rSButton4;
     private rojeru_san.RSButton rSButton5;
     private rojeru_san.RSButton rSButton7;
-    private rojerusan.RSComboMetro rSComboMetro1;
     private rojeru_san.rspanel.RSDesktopPane rSDesktopPane1;
     private rojeru_san.RSMTextFull rSMTextFull1;
     private rojeru_san.RSMTextFull rSMTextFull10;
-    private rojeru_san.RSMTextFull rSMTextFull2;
     private rojeru_san.RSMTextFull rSMTextFull3;
     private rojeru_san.RSMTextFull rSMTextFull4;
     private rojeru_san.RSMTextFull rSMTextFull5;
@@ -587,5 +606,6 @@ public class frmPets extends javax.swing.JPanel {
     private rojeru_san.RSMTextFull rSMTextFull9;
     private RSMaterialComponent.RSRadioButtonMaterial rSRadioButtonMaterial1;
     private RSMaterialComponent.RSRadioButtonMaterial rSRadioButtonMaterial2;
+    private rojeru_san.RSMTextFull txtSearchPet;
     // End of variables declaration//GEN-END:variables
 }

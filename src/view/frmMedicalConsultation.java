@@ -76,7 +76,7 @@ public class frmMedicalConsultation extends javax.swing.JFrame {
             }
         });
 
-        lblTitleMC.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblTitleMC.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         lblTitleMC.setForeground(new java.awt.Color(255, 255, 255));
         lblTitleMC.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitleMC.setText("Consulta");
