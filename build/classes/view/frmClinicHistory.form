@@ -616,10 +616,10 @@
                           <Data value="2020/03/04"/>
                         </Column>
                         <Column editable="false" title="PESO" type="java.lang.Object">
-                          <Data value="C180"/>
-                          <Data value="C181"/>
-                          <Data value="C182"/>
-                          <Data value="C183"/>
+                          <Data value="5 lb"/>
+                          <Data value="5 llb"/>
+                          <Data value="8 lb"/>
+                          <Data value="12 lb"/>
                         </Column>
                         <Column editable="false" title="TEMPERATURA" type="java.lang.Object">
                           <Data value="39 grados"/>
@@ -627,7 +627,7 @@
                           <Data value="39 grados"/>
                           <Data value="39 grados"/>
                         </Column>
-                        <Column editable="false" title="NAMESIS" type="java.lang.Object">
+                        <Column editable="false" title="ANAMNESIS" type="java.lang.Object">
                           <Data value="orem Ipsum es simplemente un texto ficticio de la industria de impresi&#xf3;n y composici&#xf3;n tipogr&#xe1;fica. Lorem Ipsum ha sido el texto ficticio est&#xe1;ndar de la industria desde el a&#xf1;o 1500, cuando una impresora desconocida tom&#xf3; una galera de tipo y la mezcl&#xf3; para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino tambi&#xe9;n el salto a la composici&#xf3;n electr&#xf3;nica, permaneciendo esencialmente sin cambios. Se populariz&#xf3; en la d&#xe9;cada de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y m&#xe1;s recientemente con software de publicaci&#xf3;n de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum."/>
                           <Data value="orem Ipsum es simplemente un texto ficticio de la industria de impresi&#xf3;n y composici&#xf3;n tipogr&#xe1;fica. Lorem Ipsum ha sido el texto ficticio est&#xe1;ndar de la industria desde el a&#xf1;o 1500, cuando una impresora desconocida tom&#xf3; una galera de tipo y la mezcl&#xf3; para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino tambi&#xe9;n el salto a la composici&#xf3;n electr&#xf3;nica, permaneciendo esencialmente sin cambios. Se populariz&#xf3; en la d&#xe9;cada de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y m&#xe1;s recientemente con software de publicaci&#xf3;n de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum."/>
                           <Data value="orem Ipsum es simplemente un texto ficticio de la industria de impresi&#xf3;n y composici&#xf3;n tipogr&#xe1;fica. Lorem Ipsum ha sido el texto ficticio est&#xe1;ndar de la industria desde el a&#xf1;o 1500, cuando una impresora desconocida tom&#xf3; una galera de tipo y la mezcl&#xf3; para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino tambi&#xe9;n el salto a la composici&#xf3;n electr&#xf3;nica, permaneciendo esencialmente sin cambios. Se populariz&#xf3; en la d&#xe9;cada de 1960 con el lanzamiento de las hojas de Letraset que contienen pasajes de Lorem Ipsum, y m&#xe1;s recientemente con software de publicaci&#xf3;n de escritorio como Aldus PageMaker que incluye versiones de Lorem Ipsum."/>

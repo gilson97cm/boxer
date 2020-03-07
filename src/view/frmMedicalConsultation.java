@@ -37,7 +37,7 @@ public class frmMedicalConsultation extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txtNamesisMC = new javax.swing.JTextArea();
+        txtHistoryMC = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtObservationMC = new javax.swing.JTextArea();
@@ -134,14 +134,14 @@ public class frmMedicalConsultation extends javax.swing.JFrame {
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 103)));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jLabel5.setText("Namesis:");
+        jLabel5.setText("Anamnesis:");
 
-        txtNamesisMC.setColumns(20);
-        txtNamesisMC.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        txtNamesisMC.setLineWrap(true);
-        txtNamesisMC.setRows(5);
-        txtNamesisMC.setAutoscrolls(false);
-        jScrollPane1.setViewportView(txtNamesisMC);
+        txtHistoryMC.setColumns(20);
+        txtHistoryMC.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtHistoryMC.setLineWrap(true);
+        txtHistoryMC.setRows(5);
+        txtHistoryMC.setAutoscrolls(false);
+        jScrollPane1.setViewportView(txtHistoryMC);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel6.setText("Observaciones:");
@@ -468,7 +468,7 @@ public class frmMedicalConsultation extends javax.swing.JFrame {
     private rojeru_san.RSButton rSButton2;
     private rojeru_san.RSButton rSButton3;
     private rojeru_san.rspanel.RSPanelRound rSPanelRound1;
-    public javax.swing.JTextArea txtNamesisMC;
+    public javax.swing.JTextArea txtHistoryMC;
     public javax.swing.JTextArea txtObservationMC;
     public rojeru_san.RSMTextFull txtTempMC;
     public javax.swing.JTextArea txtTreatmentMC;
