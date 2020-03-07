@@ -14,10 +14,15 @@ public class frmOwner extends javax.swing.JPanel {
     /**
      * Creates new form frmHome
      */
+    frmPetOfOwner formPO = new frmPetOfOwner();
     public frmOwner() {
         initComponents();
     }
-
+    
+    private void openPetOfOwner(){
+        formPO.show();
+        formPO.setLocationRelativeTo(this);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -130,6 +135,11 @@ public class frmOwner extends javax.swing.JPanel {
         rSTableMetro1.setRowHeight(40);
         rSTableMetro1.setSelectionBackground(new java.awt.Color(204, 204, 204));
         rSTableMetro1.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        rSTableMetro1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rSTableMetro1MouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(rSTableMetro1);
         if (rSTableMetro1.getColumnModel().getColumnCount() > 0) {
             rSTableMetro1.getColumnModel().getColumn(0).setResizable(false);
@@ -169,6 +179,10 @@ public class frmOwner extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void rSTableMetro1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rSTableMetro1MouseClicked
+        openPetOfOwner();
+    }//GEN-LAST:event_rSTableMetro1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

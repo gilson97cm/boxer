@@ -5,6 +5,7 @@
  */
 package view;
 
+import controller.ChangePanel;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
