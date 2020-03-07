@@ -593,9 +593,9 @@
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="rSMTextFull8" alignment="0" pref="502" max="32767" attributes="0"/>
-                              <Component id="rSMTextFull9" alignment="0" max="32767" attributes="0"/>
-                              <Component id="rSMTextFull10" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtNameOwner" alignment="0" pref="502" max="32767" attributes="0"/>
+                              <Component id="txtAdressOwner" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtPhoneOwner" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel24" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -628,15 +628,15 @@
                               <Component id="jLabel26" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="rSMTextFull8" min="-2" pref="45" max="-2" attributes="0"/>
+                          <Component id="txtNameOwner" min="-2" pref="45" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                           <Component id="jLabel24" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                          <Component id="rSMTextFull9" min="-2" pref="45" max="-2" attributes="0"/>
+                          <Component id="txtAdressOwner" min="-2" pref="45" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jLabel25" min="-2" pref="30" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="rSMTextFull10" min="-2" pref="45" max="-2" attributes="0"/>
+                          <Component id="txtPhoneOwner" min="-2" pref="45" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jPanel7" max="-2" attributes="0"/>
@@ -684,7 +684,7 @@
                     <Property name="text" type="java.lang.String" value="*"/>
                   </Properties>
                 </Component>
-                <Component class="rojeru_san.RSMTextFull" name="rSMTextFull8">
+                <Component class="rojeru_san.RSMTextFull" name="txtNameOwner">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -700,8 +700,11 @@
                     </Property>
                     <Property name="placeholder" type="java.lang.String" value=""/>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                  </AuxValues>
                 </Component>
-                <Component class="rojeru_san.RSMTextFull" name="rSMTextFull9">
+                <Component class="rojeru_san.RSMTextFull" name="txtAdressOwner">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -717,8 +720,11 @@
                     </Property>
                     <Property name="placeholder" type="java.lang.String" value=""/>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                  </AuxValues>
                 </Component>
-                <Component class="rojeru_san.RSMTextFull" name="rSMTextFull10">
+                <Component class="rojeru_san.RSMTextFull" name="txtPhoneOwner">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -734,6 +740,9 @@
                     </Property>
                     <Property name="placeholder" type="java.lang.String" value=""/>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                  </AuxValues>
                 </Component>
                 <Component class="rojeru_san.RSButton" name="rSButton1">
                   <Properties>

@@ -82,9 +82,9 @@ public class frmPets extends javax.swing.JPanel {
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
-        rSMTextFull8 = new rojeru_san.RSMTextFull();
-        rSMTextFull9 = new rojeru_san.RSMTextFull();
-        rSMTextFull10 = new rojeru_san.RSMTextFull();
+        txtNameOwner = new rojeru_san.RSMTextFull();
+        txtAdressOwner = new rojeru_san.RSMTextFull();
+        txtPhoneOwner = new rojeru_san.RSMTextFull();
         rSButton1 = new rojeru_san.RSButton();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
@@ -357,23 +357,23 @@ public class frmPets extends javax.swing.JPanel {
         jLabel26.setForeground(new java.awt.Color(255, 51, 51));
         jLabel26.setText("*");
 
-        rSMTextFull8.setForeground(new java.awt.Color(0, 0, 0));
-        rSMTextFull8.setBordeColorFocus(new java.awt.Color(51, 153, 103));
-        rSMTextFull8.setBotonColor(new java.awt.Color(51, 153, 103));
-        rSMTextFull8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        rSMTextFull8.setPlaceholder("");
+        txtNameOwner.setForeground(new java.awt.Color(0, 0, 0));
+        txtNameOwner.setBordeColorFocus(new java.awt.Color(51, 153, 103));
+        txtNameOwner.setBotonColor(new java.awt.Color(51, 153, 103));
+        txtNameOwner.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtNameOwner.setPlaceholder("");
 
-        rSMTextFull9.setForeground(new java.awt.Color(0, 0, 0));
-        rSMTextFull9.setBordeColorFocus(new java.awt.Color(51, 153, 103));
-        rSMTextFull9.setBotonColor(new java.awt.Color(51, 153, 103));
-        rSMTextFull9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        rSMTextFull9.setPlaceholder("");
+        txtAdressOwner.setForeground(new java.awt.Color(0, 0, 0));
+        txtAdressOwner.setBordeColorFocus(new java.awt.Color(51, 153, 103));
+        txtAdressOwner.setBotonColor(new java.awt.Color(51, 153, 103));
+        txtAdressOwner.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtAdressOwner.setPlaceholder("");
 
-        rSMTextFull10.setForeground(new java.awt.Color(0, 0, 0));
-        rSMTextFull10.setBordeColorFocus(new java.awt.Color(51, 153, 103));
-        rSMTextFull10.setBotonColor(new java.awt.Color(51, 153, 103));
-        rSMTextFull10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        rSMTextFull10.setPlaceholder("");
+        txtPhoneOwner.setForeground(new java.awt.Color(0, 0, 0));
+        txtPhoneOwner.setBordeColorFocus(new java.awt.Color(51, 153, 103));
+        txtPhoneOwner.setBotonColor(new java.awt.Color(51, 153, 103));
+        txtPhoneOwner.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtPhoneOwner.setPlaceholder("");
 
         rSButton1.setBackground(new java.awt.Color(41, 182, 246));
         rSButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons/carpeta.png"))); // NOI18N
@@ -419,9 +419,9 @@ public class frmPets extends javax.swing.JPanel {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rSMTextFull8, javax.swing.GroupLayout.DEFAULT_SIZE, 502, Short.MAX_VALUE)
-                    .addComponent(rSMTextFull9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(rSMTextFull10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtNameOwner, javax.swing.GroupLayout.DEFAULT_SIZE, 502, Short.MAX_VALUE)
+                    .addComponent(txtAdressOwner, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtPhoneOwner, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel24)
@@ -446,15 +446,15 @@ public class frmPets extends javax.swing.JPanel {
                     .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rSMTextFull8, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNameOwner, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
                 .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(8, 8, 8)
-                .addComponent(rSMTextFull9, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtAdressOwner, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rSMTextFull10, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtPhoneOwner, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -598,15 +598,15 @@ public class frmPets extends javax.swing.JPanel {
     private rojeru_san.RSButton rSButton7;
     private rojeru_san.rspanel.RSDesktopPane rSDesktopPane1;
     private rojeru_san.RSMTextFull rSMTextFull1;
-    private rojeru_san.RSMTextFull rSMTextFull10;
     private rojeru_san.RSMTextFull rSMTextFull3;
     private rojeru_san.RSMTextFull rSMTextFull4;
     private rojeru_san.RSMTextFull rSMTextFull5;
     private rojeru_san.RSMTextFull rSMTextFull6;
-    private rojeru_san.RSMTextFull rSMTextFull8;
-    private rojeru_san.RSMTextFull rSMTextFull9;
     private RSMaterialComponent.RSRadioButtonMaterial rSRadioButtonMaterial1;
     private RSMaterialComponent.RSRadioButtonMaterial rSRadioButtonMaterial2;
+    public static rojeru_san.RSMTextFull txtAdressOwner;
+    public static rojeru_san.RSMTextFull txtNameOwner;
+    public static rojeru_san.RSMTextFull txtPhoneOwner;
     private rojeru_san.RSMTextFull txtSearchPet;
     // End of variables declaration//GEN-END:variables
 }

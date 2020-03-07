@@ -75,6 +75,16 @@ public class frmClinicHistory extends javax.swing.JFrame {
         formMC.txtObservationMC.setText("");
         formMC.txtTreatmentMC.setText("");
     }
+    
+    public void close(java.awt.event.MouseEvent evt){
+           if (evt.getButton() == java.awt.event.MouseEvent.BUTTON1) {
+            this.dispose();
+            if(showMC){
+                formMC.dispose();
+                showMC = false;
+            }
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -523,13 +533,7 @@ public class frmClinicHistory extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseClicked
-        if (evt.getButton() == java.awt.event.MouseEvent.BUTTON1) {
-            this.dispose();
-            if(showMC){
-                formMC.dispose();
-                showMC = false;
-            }
-        }
+     close(evt);
     }//GEN-LAST:event_btnCloseMouseClicked
 
     private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed

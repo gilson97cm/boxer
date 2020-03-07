@@ -6,6 +6,7 @@
 package view;
 
 import controller.ChangePanel;
+import java.awt.Color;
 
 /**
  *
@@ -19,15 +20,85 @@ public class frmPetOfOwner extends javax.swing.JFrame {
     int layoutX;
     int layoutY;
     boolean max = false;
+    boolean switchPO = true;
+    //cerrar ventanas hijas
+    boolean switchHC = false;
+
+    frmClinicHistory formHC = new frmClinicHistory();
+    frmMedicalConsultation formMC = new frmMedicalConsultation();
+    frmPets fromPet = new frmPets();
 
     public frmPetOfOwner() {
         initComponents();
     }
 
-    public void openClinicHistory() {
-        frmClinicHistory form = new frmClinicHistory();
-        form.show();
-        form.setLocationRelativeTo(this);
+    private void openClinicHistory() {
+        formHC.show();
+        formHC.setLocationRelativeTo(this);
+        switchHC = true;
+    }
+
+    private void openFrmPets(java.awt.event.MouseEvent evt) {
+        new ChangePanel(frmPrincipal.pnlContainer, new frmPets());
+
+        //cerrar ventanas hijas abiertas
+        if (switchPO) {
+            this.dispose();
+            if (switchHC) {
+                formHC.close(evt);
+                switchHC = false;
+            }
+            switchPO = false;
+        }
+
+        customBtnFrmPrincipal();
+    }
+
+    private void customBtnFrmPrincipal() {
+        frmPrincipal.btnHome.setSelected(false);
+        frmPrincipal.btnPet.setSelected(true);
+        frmPrincipal.btnOwner.setSelected(false);
+        frmPrincipal.btnSettings.setSelected(false);
+
+        if (frmPrincipal.btnPet.isSelected()) {
+            frmPrincipal.pnlPet.setBackground(new Color(51, 153, 103));//color verde
+            frmPrincipal.btnPet.setColorNormal(new Color(204, 204, 204));
+            frmPrincipal.btnPet.setColorHover(new Color(204, 204, 204));
+            frmPrincipal.btnPet.setColorPressed(new Color(204, 204, 204));
+
+            frmPrincipal.pnlHome.setBackground(new Color(239, 238, 244));
+            frmPrincipal.btnHome.setColorNormal(new Color(239, 238, 244));
+            frmPrincipal.btnHome.setColorHover(new Color(204, 204, 204));
+            frmPrincipal.btnHome.setColorPressed(new Color(204, 204, 204));
+
+            frmPrincipal.pnlOwner.setBackground(new Color(239, 238, 244));
+            frmPrincipal.btnOwner.setColorNormal(new Color(239, 238, 244));
+            frmPrincipal.btnOwner.setColorHover(new Color(204, 204, 204));
+            frmPrincipal.btnOwner.setColorPressed(new Color(204, 204, 204));
+
+            frmPrincipal.pnlSettings.setBackground(new Color(239, 238, 244));
+            frmPrincipal.btnSettings.setColorNormal(new Color(239, 238, 244));
+            frmPrincipal.btnSettings.setColorHover(new Color(204, 204, 204));
+            frmPrincipal.btnSettings.setColorPressed(new Color(204, 204, 204));
+        } else {
+            frmPrincipal.pnlPet.setBackground(new Color(239, 238, 244));
+            frmPrincipal.btnPet.setColorNormal(new Color(239, 238, 244));
+            frmPrincipal.btnPet.setColorHover(new Color(204, 204, 204));
+            frmPrincipal.btnPet.setColorPressed(new Color(204, 204, 204));
+        }
+    }
+
+    private void insertDetailOwner() {
+        //bloquerar campos nombre direccion telefono
+        frmPets.txtNameOwner.enable(false);
+        frmPets.txtAdressOwner.enable(false);
+        frmPets.txtPhoneOwner.enable(false);
+
+        //llenar campos bloqueados
+        frmPets.txtNameOwner.setText(lblNameOwnerDP.getText());
+        frmPets.txtAdressOwner.setText(lblAddressOwnerDP.getText());
+        frmPets.txtPhoneOwner.setText(lblPhoneOwnerDP.getText());
+
     }
 
     /**
@@ -51,9 +122,9 @@ public class frmPetOfOwner extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        lblNumHistoryCH = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
+        lblNameOwnerDP = new javax.swing.JLabel();
+        lblPhoneOwnerDP = new javax.swing.JLabel();
+        lblAddressOwnerDP = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         btnNewPetPO = new rojeru_san.RSButton();
         jPanel2 = new javax.swing.JPanel();
@@ -152,14 +223,14 @@ public class frmPetOfOwner extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel6.setText("Teléfono:");
 
-        lblNumHistoryCH.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lblNumHistoryCH.setText("nombre");
+        lblNameOwnerDP.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblNameOwnerDP.setText("nombre");
 
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel13.setText("teléfono");
+        lblPhoneOwnerDP.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblPhoneOwnerDP.setText("teléfono");
 
-        jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel14.setText("dirección");
+        lblAddressOwnerDP.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblAddressOwnerDP.setText("dirección");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -173,9 +244,9 @@ public class frmPetOfOwner extends javax.swing.JFrame {
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblNumHistoryCH, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblPhoneOwnerDP, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAddressOwnerDP, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNameOwnerDP, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(57, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -183,15 +254,15 @@ public class frmPetOfOwner extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblNumHistoryCH, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblNameOwnerDP, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblAddressOwnerDP, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblPhoneOwnerDP, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 8, Short.MAX_VALUE))
         );
 
@@ -207,6 +278,9 @@ public class frmPetOfOwner extends javax.swing.JFrame {
         btnNewPetPO.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnNewPetPO.setIconTextGap(8);
         btnNewPetPO.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnNewPetPOMouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnNewPetPOMousePressed(evt);
             }
@@ -352,6 +426,11 @@ public class frmPetOfOwner extends javax.swing.JFrame {
     private void btnCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseClicked
         if (evt.getButton() == java.awt.event.MouseEvent.BUTTON1) {
             this.dispose();
+            if (switchHC) {
+                formHC.close(evt);
+                switchHC = false;
+            }
+
         }
     }//GEN-LAST:event_btnCloseMouseClicked
 
@@ -385,8 +464,15 @@ public class frmPetOfOwner extends javax.swing.JFrame {
     }//GEN-LAST:event_rSTableMetro1MouseClicked
 
     private void btnNewPetPOMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNewPetPOMousePressed
-        
+
     }//GEN-LAST:event_btnNewPetPOMousePressed
+
+    private void btnNewPetPOMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNewPetPOMouseClicked
+        //abrir formulario
+        openFrmPets(evt);
+        //llenar camps
+       insertDetailOwner();
+    }//GEN-LAST:event_btnNewPetPOMouseClicked
 
     /**
      * @param args the command line arguments
@@ -431,8 +517,6 @@ public class frmPetOfOwner extends javax.swing.JFrame {
     private rojeru_san.RSButton btnMin;
     private rojeru_san.RSButton btnNewPetPO;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -443,7 +527,9 @@ public class frmPetOfOwner extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JLabel lblNumHistoryCH;
+    private javax.swing.JLabel lblAddressOwnerDP;
+    private javax.swing.JLabel lblNameOwnerDP;
+    private javax.swing.JLabel lblPhoneOwnerDP;
     private javax.swing.JPanel pnlCH;
     private rojeru_san.rspanel.RSPanelRound rSPanelRound1;
     private RSMaterialComponent.RSTableMetro rSTableMetro1;

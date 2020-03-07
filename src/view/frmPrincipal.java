@@ -622,23 +622,23 @@ public class frmPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private rojeru_san.RSButton btnClose;
-    public res.rsbuttom.RSButtonMetro btnHome;
+    public static res.rsbuttom.RSButtonMetro btnHome;
     private rojeru_san.RSButton btnMax;
     private rojeru_san.RSButton btnMin;
-    public res.rsbuttom.RSButtonMetro btnOwner;
-    public res.rsbuttom.RSButtonMetro btnPet;
-    public res.rsbuttom.RSButtonMetro btnSettings;
+    public static res.rsbuttom.RSButtonMetro btnOwner;
+    public static res.rsbuttom.RSButtonMetro btnPet;
+    public static res.rsbuttom.RSButtonMetro btnSettings;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private jcMousePanel.jcMousePanel jcMousePanel1;
-    public javax.swing.JPanel pnlContainer;
-    private javax.swing.JPanel pnlHome;
+    public static javax.swing.JPanel pnlContainer;
+    public static javax.swing.JPanel pnlHome;
     private javax.swing.JPanel pnlMenu;
-    private javax.swing.JPanel pnlOwner;
-    private javax.swing.JPanel pnlPet;
-    private javax.swing.JPanel pnlSettings;
+    public static javax.swing.JPanel pnlOwner;
+    public static javax.swing.JPanel pnlPet;
+    public static javax.swing.JPanel pnlSettings;
     private javax.swing.JPanel pnlSys;
     // End of variables declaration//GEN-END:variables
 }
