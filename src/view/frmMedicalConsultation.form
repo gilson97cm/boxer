@@ -411,7 +411,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="16" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Fecha"/>
+                <Property name="text" type="java.lang.String" value="Fecha:"/>
               </Properties>
             </Component>
             <Component class="rojeru_san.rsdate.RSDateChooser" name="dateMC">
@@ -514,11 +514,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-                      <Component id="rSButton1" min="-2" pref="160" max="-2" attributes="0"/>
+                      <Component id="btnSaveMC" min="-2" pref="160" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="rSButton2" min="-2" pref="160" max="-2" attributes="0"/>
+                      <Component id="btnEditMC" min="-2" pref="160" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="rSButton3" min="-2" pref="160" max="-2" attributes="0"/>
+                      <Component id="btnDeleteMC" min="-2" pref="160" max="-2" attributes="0"/>
                       <EmptySpace pref="54" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -528,9 +528,9 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="rSButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="rSButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="rSButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnSaveMC" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnEditMC" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnDeleteMC" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -538,7 +538,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="rojeru_san.RSButton" name="rSButton1">
+            <Component class="rojeru_san.RSButton" name="btnSaveMC">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="50" green="af" red="4c" type="rgb"/>
@@ -553,10 +553,13 @@
                 <Property name="iconTextGap" type="int" value="8"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSButton1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSaveMCActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+              </AuxValues>
             </Component>
-            <Component class="rojeru_san.RSButton" name="rSButton2">
+            <Component class="rojeru_san.RSButton" name="btnEditMC">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="98" red="ff" type="rgb"/>
@@ -571,10 +574,13 @@
                 <Property name="iconTextGap" type="int" value="8"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rSButton2ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditMCActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+              </AuxValues>
             </Component>
-            <Component class="rojeru_san.RSButton" name="rSButton3">
+            <Component class="rojeru_san.RSButton" name="btnDeleteMC">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="36" green="43" red="f4" type="rgb"/>
@@ -588,6 +594,12 @@
                 </Property>
                 <Property name="iconTextGap" type="int" value="8"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeleteMCActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>

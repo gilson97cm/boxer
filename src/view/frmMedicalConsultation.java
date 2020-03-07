@@ -18,6 +18,9 @@ public class frmMedicalConsultation extends javax.swing.JFrame {
     boolean max = false;
     public frmMedicalConsultation() {
         initComponents();
+        btnSaveMC.setEnabled(false);
+        btnEditMC.setEnabled(false);
+        btnDeleteMC.setEnabled(false);
     }
 
     /** This method is called from within the constructor to
@@ -54,9 +57,9 @@ public class frmMedicalConsultation extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         txtTempMC = new rojeru_san.RSMTextFull();
         jPanel2 = new javax.swing.JPanel();
-        rSButton1 = new rojeru_san.RSButton();
-        rSButton2 = new rojeru_san.RSButton();
-        rSButton3 = new rojeru_san.RSButton();
+        btnSaveMC = new rojeru_san.RSButton();
+        btnEditMC = new rojeru_san.RSButton();
+        btnDeleteMC = new rojeru_san.RSButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
@@ -209,7 +212,7 @@ public class frmMedicalConsultation extends javax.swing.JFrame {
         lblNumHistoryMC.setText("# Historia");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        jLabel3.setText("Fecha");
+        jLabel3.setText("Fecha:");
 
         dateMC.setBackground(new java.awt.Color(0, 112, 192));
         dateMC.setColorBackground(new java.awt.Color(51, 153, 103));
@@ -281,33 +284,38 @@ public class frmMedicalConsultation extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(239, 238, 244));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 103)));
 
-        rSButton1.setBackground(new java.awt.Color(76, 175, 80));
-        rSButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons/seguro (1).png"))); // NOI18N
-        rSButton1.setText("Guardar");
-        rSButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        rSButton1.setIconTextGap(8);
-        rSButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnSaveMC.setBackground(new java.awt.Color(76, 175, 80));
+        btnSaveMC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons/seguro (1).png"))); // NOI18N
+        btnSaveMC.setText("Guardar");
+        btnSaveMC.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnSaveMC.setIconTextGap(8);
+        btnSaveMC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButton1ActionPerformed(evt);
+                btnSaveMCActionPerformed(evt);
             }
         });
 
-        rSButton2.setBackground(new java.awt.Color(255, 152, 0));
-        rSButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons/papel (5).png"))); // NOI18N
-        rSButton2.setText("Editar");
-        rSButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        rSButton2.setIconTextGap(8);
-        rSButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnEditMC.setBackground(new java.awt.Color(255, 152, 0));
+        btnEditMC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons/papel (5).png"))); // NOI18N
+        btnEditMC.setText("Editar");
+        btnEditMC.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnEditMC.setIconTextGap(8);
+        btnEditMC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSButton2ActionPerformed(evt);
+                btnEditMCActionPerformed(evt);
             }
         });
 
-        rSButton3.setBackground(new java.awt.Color(244, 67, 54));
-        rSButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons/papel (4).png"))); // NOI18N
-        rSButton3.setText("Eliminar");
-        rSButton3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        rSButton3.setIconTextGap(8);
+        btnDeleteMC.setBackground(new java.awt.Color(244, 67, 54));
+        btnDeleteMC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons/papel (4).png"))); // NOI18N
+        btnDeleteMC.setText("Eliminar");
+        btnDeleteMC.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnDeleteMC.setIconTextGap(8);
+        btnDeleteMC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteMCActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -315,11 +323,11 @@ public class frmMedicalConsultation extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(54, 54, 54)
-                .addComponent(rSButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSaveMC, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(rSButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnEditMC, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(rSButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnDeleteMC, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(54, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -327,9 +335,9 @@ public class frmMedicalConsultation extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rSButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rSButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnSaveMC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEditMC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDeleteMC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -400,13 +408,17 @@ public class frmMedicalConsultation extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_pnlCHMousePressed
 
-    private void rSButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rSButton1ActionPerformed
+    private void btnSaveMCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveMCActionPerformed
+       System.out.println("save");
+    }//GEN-LAST:event_btnSaveMCActionPerformed
 
-    private void rSButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rSButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rSButton2ActionPerformed
+    private void btnEditMCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditMCActionPerformed
+        System.out.println("edit");
+    }//GEN-LAST:event_btnEditMCActionPerformed
+
+    private void btnDeleteMCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteMCActionPerformed
+        System.out.println("delete");
+    }//GEN-LAST:event_btnDeleteMCActionPerformed
 
     /**
      * @param args the command line arguments
@@ -446,7 +458,10 @@ public class frmMedicalConsultation extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private rojeru_san.RSButton btnClose;
+    public static rojeru_san.RSButton btnDeleteMC;
+    public static rojeru_san.RSButton btnEditMC;
     private rojeru_san.RSButton btnMin;
+    public static rojeru_san.RSButton btnSaveMC;
     public rojeru_san.rsdate.RSDateChooser dateMC;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -464,9 +479,6 @@ public class frmMedicalConsultation extends javax.swing.JFrame {
     public javax.swing.JLabel lblNumHistoryMC;
     public javax.swing.JLabel lblTitleMC;
     private javax.swing.JPanel pnlCH;
-    private rojeru_san.RSButton rSButton1;
-    private rojeru_san.RSButton rSButton2;
-    private rojeru_san.RSButton rSButton3;
     private rojeru_san.rspanel.RSPanelRound rSPanelRound1;
     public javax.swing.JTextArea txtHistoryMC;
     public javax.swing.JTextArea txtObservationMC;

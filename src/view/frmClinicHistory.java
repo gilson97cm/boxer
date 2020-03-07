@@ -5,6 +5,7 @@
  */
 package view;
 
+import java.awt.Color;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -42,9 +43,9 @@ public class frmClinicHistory extends javax.swing.JFrame {
         formMC.lblTitleMC.setText(title);
         showMC = true;
     }
-    
-    private void historyDetail(){
-            try {
+
+    private void historyDetail() {
+        try {
             openMedicalConsultation("Detalle de Consulta");
 
             //numero de historia
@@ -75,15 +76,43 @@ public class frmClinicHistory extends javax.swing.JFrame {
         formMC.txtObservationMC.setText("");
         formMC.txtTreatmentMC.setText("");
     }
-    
-    public void close(java.awt.event.MouseEvent evt){
-           if (evt.getButton() == java.awt.event.MouseEvent.BUTTON1) {
+
+    public void close(java.awt.event.MouseEvent evt) {
+        if (evt.getButton() == java.awt.event.MouseEvent.BUTTON1) {
             this.dispose();
-            if(showMC){
+            if (showMC) {
                 formMC.dispose();
                 showMC = false;
             }
         }
+    }
+
+    private void lockSave() {
+        frmMedicalConsultation.btnSaveMC.setEnabled(false);
+        frmMedicalConsultation.btnEditMC.setEnabled(true);
+        frmMedicalConsultation.btnDeleteMC.setEnabled(true);
+
+        frmMedicalConsultation.btnSaveMC.setBackground(null);
+        frmMedicalConsultation.btnSaveMC.setColorText(new Color(170, 170, 170));
+        frmMedicalConsultation.btnEditMC.setBackground(new Color(255, 152, 0)); //amarillo
+        frmMedicalConsultation.btnEditMC.setColorText(new Color(255, 255, 255));
+        frmMedicalConsultation.btnDeleteMC.setBackground(new Color(244, 67, 54)); //rojo
+        frmMedicalConsultation.btnDeleteMC.setColorText(new Color(255, 255, 255));
+
+    }
+
+    private void unlockSave() {
+        frmMedicalConsultation.btnSaveMC.setEnabled(true);
+        frmMedicalConsultation.btnEditMC.setEnabled(false);
+        frmMedicalConsultation.btnDeleteMC.setEnabled(false);
+
+        frmMedicalConsultation.btnSaveMC.setBackground(new Color(76, 175, 80)); //verde
+        frmMedicalConsultation.btnSaveMC.setColorText(new Color(255, 255, 255));
+        frmMedicalConsultation.btnEditMC.setBackground(null);
+        frmMedicalConsultation.btnEditMC.setColorText(new Color(170, 170, 170));
+        frmMedicalConsultation.btnDeleteMC.setBackground(null);
+        frmMedicalConsultation.btnDeleteMC.setColorText(new Color(170, 170, 170));
+
     }
 
     /**
@@ -533,7 +562,7 @@ public class frmClinicHistory extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseClicked
-     close(evt);
+        close(evt);
     }//GEN-LAST:event_btnCloseMouseClicked
 
     private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
@@ -562,10 +591,13 @@ public class frmClinicHistory extends javax.swing.JFrame {
         openMedicalConsultation("Nueva Consulta");
         //numero de historia
         formMC.lblNumHistoryMC.setText(this.lblNumHistoryCH.getText().toString());
+        unlockSave();
+
     }//GEN-LAST:event_btnNewMedicalConsultationActionPerformed
 
     private void tbClinicHistoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbClinicHistoryMouseClicked
         historyDetail();
+        lockSave();
     }//GEN-LAST:event_tbClinicHistoryMouseClicked
 
     /**

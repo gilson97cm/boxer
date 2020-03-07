@@ -255,7 +255,7 @@ public class frmPets extends javax.swing.JPanel {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(rSMTextFull5, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
+                    .addComponent(rSMTextFull5, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel8Layout.createSequentialGroup()
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel8Layout.createSequentialGroup()
@@ -268,10 +268,10 @@ public class frmPets extends javax.swing.JPanel {
                                 .addComponent(jLabel18)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel17)))
-                        .addGap(0, 138, Short.MAX_VALUE))
-                    .addComponent(rSMTextFull1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
-                    .addComponent(rSMTextFull3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
-                    .addComponent(rSMTextFull4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE))
+                        .addGap(0, 157, Short.MAX_VALUE))
+                    .addComponent(rSMTextFull1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
+                    .addComponent(rSMTextFull3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
+                    .addComponent(rSMTextFull4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(rSMTextFull6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
@@ -285,7 +285,7 @@ public class frmPets extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(rSRadioButtonMaterial1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(dateCH, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE))
+                    .addComponent(dateCH, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(
@@ -419,7 +419,7 @@ public class frmPets extends javax.swing.JPanel {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtNameOwner, javax.swing.GroupLayout.DEFAULT_SIZE, 502, Short.MAX_VALUE)
+                    .addComponent(txtNameOwner, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)
                     .addComponent(txtAdressOwner, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtPhoneOwner, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel9Layout.createSequentialGroup()
@@ -491,7 +491,7 @@ public class frmPets extends javax.swing.JPanel {
             }
         });
         rSDesktopPane1.add(btnNewPet);
-        btnNewPet.setBounds(150, 10, 200, 40);
+        btnNewPet.setBounds(200, 10, 200, 40);
 
         btnSavePet.setBackground(new java.awt.Color(76, 175, 80));
         btnSavePet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons/seguro (1).png"))); // NOI18N
@@ -504,7 +504,7 @@ public class frmPets extends javax.swing.JPanel {
             }
         });
         rSDesktopPane1.add(btnSavePet);
-        btnSavePet.setBounds(370, 10, 200, 40);
+        btnSavePet.setBounds(420, 10, 200, 40);
 
         rSButton4.setBackground(new java.awt.Color(255, 152, 0));
         rSButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons/papel (5).png"))); // NOI18N
@@ -512,7 +512,7 @@ public class frmPets extends javax.swing.JPanel {
         rSButton4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         rSButton4.setIconTextGap(8);
         rSDesktopPane1.add(rSButton4);
-        rSButton4.setBounds(590, 10, 200, 40);
+        rSButton4.setBounds(640, 10, 200, 40);
 
         rSButton5.setBackground(new java.awt.Color(244, 67, 54));
         rSButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/icons/papel (4).png"))); // NOI18N
@@ -520,7 +520,7 @@ public class frmPets extends javax.swing.JPanel {
         rSButton5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         rSButton5.setIconTextGap(8);
         rSDesktopPane1.add(rSButton5);
-        rSButton5.setBounds(810, 10, 200, 40);
+        rSButton5.setBounds(860, 10, 200, 40);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -530,8 +530,8 @@ public class frmPets extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnlPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1083, Short.MAX_VALUE)
-                    .addComponent(rSDesktopPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1083, Short.MAX_VALUE))
+                    .addComponent(pnlPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1159, Short.MAX_VALUE)
+                    .addComponent(rSDesktopPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1159, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -542,7 +542,7 @@ public class frmPets extends javax.swing.JPanel {
                 .addComponent(pnlPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(rSDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
